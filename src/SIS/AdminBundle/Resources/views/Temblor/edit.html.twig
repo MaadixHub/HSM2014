@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+    <li>
+
+        <form class="form" action="{{ path('admin_temblor_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+            {{ form_errors(edit_form) }}
+            <div class="espacio"></div>
+            <div class="contenedor_inputs_labels">
+                <div class="div_izquierdo">
+                    <div>
+                       {{ form_label(edit_form.sismo, 'Sismo') }}<br>
+                       {{ form_widget(edit_form.sismo) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.localidad, 'Localidad') }}<br>
+                        {{ form_widget(edit_form.localidad) }}
+                    </div>
+					<div style="margin-bottom: 10px;">
+                        {{ form_label(edit_form.intensidad, 'Intensidad') }}<br>
+                        {{ form_widget(edit_form.intensidad) }}
+                    </div>
+					<div style="position: absolute; margin-top: 10px;">
+                        <div class="comentario_label">{{ form_label(edit_form.comentario, 'Comentario') }}</div><br>
+                        {{ form_widget(edit_form.comentario) }}
+                    </div>
+                </div>
+            </div>
+            <p>
+			{{ form_rest(edit_form) }}
+                <button class="editar" type="submit" title="Editar Archio"></button>
+            </p>
+        </form>
+    </li>
+    <li>
+       <!-- <form action="{{ path('admin_temblor_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button class="eliminar" type="submit" title="Eliminar Archivo"></button>
+        </form>-->
+    </li>
+</ul>
+{% endblock %}

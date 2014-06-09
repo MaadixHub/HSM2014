@@ -1,0 +1,98 @@
+span{color: #fff;}
+.formulario{
+	position:absolute;
+	top:130px;
+	left:30% !important; 
+	margin-left:-300px !important;
+	width:360px;
+	height:180px;
+	background:url(../img/negro_90.png);
+	text-align:left;
+	padding:20px;
+	-ms-border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-o-border-radius:15px;
+	border-radius:15px;
+	
+	border-color:#333; 
+	-ms-box-shadow:#ccc 4px 4px 7px 4px;
+	-webkit-box-shadow:#ccc 4px 4px 7px 4px;
+	-moz-box-shadow:#ccc 4px 4px 7px 4px;
+	-o-box-shadow:#ccc 4px 4px 7px 4px;
+	box-shadow:#ccc 4px 4px 7px 4px;
+}
+
+.formulario input, .formulario textarea{
+	position:relative;
+	z-index:10; 
+	background:#ddd;
+	color:#3e3e3e;
+
+	-ms-border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+}
+.formulario_input_position{
+	position:absolute;
+}
+.formulario_input_position span{
+	width: 300px;
+}
+.username{
+	left:30px;
+}
+#username,#password{
+	width: 300px;
+}
+.password{
+	left:30px;
+	top:80px;
+}
+
+.ENV{
+	right:50px;
+	top:160px;
+	width:150px;
+	z-index:20;
+}
+.ENV button{
+	width:150px;
+	
+	-ms-border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+}
+.recuperar_cuenta{
+	position: absolute; 
+	top: 165px;
+	left: 10%;
+color: #fff;
+text-decoration: none;
+font-size: 15px;
+}
+.titulo{
+	position:absolute;
+	top:60px;
+	left:50% !important; 
+	margin-left:-300px !important;
+	color:#444;
+	-ms-text-shadow:#667 2px 2px 4px;
+	-webkit-text-shadow:#667 2px 2px 4px;
+	-moz-text-shadow:#667 2px 2px 4px;
+	-o-text-shadow:#667 2px 2px 4px;
+	text-shadow:#667 2px 2px 4px;
+}
+.informacion_login{
+	float: right;
+	width: 370px;
+	color: #333;
+	margin-right: 300px;
+	margin-top: 150px;
+}
+.informacion_login p{padding:10px 0; text-align: justify;}
+.informacion_login a{color: #333;}

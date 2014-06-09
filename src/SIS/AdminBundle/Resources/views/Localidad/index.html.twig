@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administrador</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/generalAdmon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/popupAdmon/popup_administrador.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/popupAdmon/popup_administrador_tabulador.css')}}">
+    <!--Estilos del datagrid-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/datagrid/datagrid.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/datagrid/kendo.common.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/datagrid/kendo.default.min.css')}}">
+    <!--Estilos del datagrid-->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <!--Scripts del datagrid-->
+    <script type="text/javascript" src="{{ asset('js/datagrid/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/datagrid/kendo.web.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/datagrid/console.js')}}"></script>
+    <!--Scripts del datagrid-->
+</head>
+<body>
+    <script language="javascript" type="text/javascript">
+    function createRandomData(count) {
+    var data = [ 
+        {% for entity in entities %}
+            {IdLocalidad: {{ entity.id }}, Localidad: "{{ entity.localidad }}", NombreOficial: "{{ entity.nombreOficial }}", Latitud: "{{ entity.latitud }}", Longitud: "{{ entity.longitud }}", Estado: "{{ entity.estado }}", Actions: ""},
+        {% endfor %}
+        ],
+
+        now = new Date();
+    return data;
+}
+    </script>
+
+    <div id="header">
+        <img src="{{ asset('img/logo_small2.png')}}" alt="Catalogo de Sismos en México">
+        <a class="logout" href="#">Cerrar Sesión</a>
+        <div class="menu">
+            <a class="agregar_nuevo_elemento"  href="#dialog3" onclick="agregar()" name="modal"><img src="{{ asset('img/img_grid/new.png')}}" title="Agregar Nueva Localidad"></a>
+            <ul>
+                <li><a href="{{ path('admin_sismo') }}">Sismos</a></li>
+                <li><a href="{{ path('admin_temblor') }}">Temblor</a></li>
+                <li><a href="{{ path('admin_zonaMacrosismica') }}">Zona Macrosismica</a></li>
+                <li><a href="{{ path('admin_localidad') }}">Localidad</a></li>
+                <li><a href="{{ path('admin_user') }}">Nuevo Usuario</a></li>
+            </ul>
+        </div>
+    </div>
+
+<div id="content">
+ <div id="example" class="k-content">
+            <div id="grid"></div>
+
+            <script>
+                $(document).ready(function() {
+                    $("#grid").kendoGrid({
+                        dataSource: {
+                            data: createRandomData(50),
+                            schema: {
+                                model: {
+                                    fields: {
+                                        IdLocalidad: { type: "number"},
+                                        Localidad: { type: "string" },
+                                        NombreOficial: { type: "string" },
+                                        Latitud: { type: "string" },
+                                        Longitud: { type: "string" },
+                                        Estado: { type: "string" },
+                                    }
+                                }
+                            },
+                            pageSize: 20
+                        },
+                        scrollable: true,
+                        sortable: true,
+                        filterable: true,
+                        reorderable: true,
+                        resizable: true,
+                        pageable: {
+                            input: true,
+                            numeric: false
+                        },
+                        columns: [
+                            {
+                                field: "IdLocalidad",
+                                title: "Id Localidad",
+                                width: 20
+                            },
+                            {
+                                field: "Localidad",
+                                width: 20
+                            },
+                            {
+                                field: "NombreOficial",
+                                title: "Nombre Oficial",
+                                width: 30
+                            },
+                            {
+                                field: "Latitud",
+                                width: 30
+                            },
+                            {
+                                field: "Longitud",
+                                width: 30
+                            },                            
+                            {
+                                field: "Estado",
+                                width: 30
+                            },
+                            {
+                                command: [{ text: "Ver", click: show }, { text: "Editar", click: edit }] , title: "Eventos", width: 100
+                            },
+                        ]
+                    });
+                });
+
+                function edit(e){
+                    e.preventDefault();
+                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                    var idItem = dataItem.IdLocalidad;
+
+                    var id = '#dialog2';
+
+                    $('#box2').empty();
+                    $('#box2').load('{{ path('admin_localidad') }}' + idItem + '/edit');
+
+                    //Get the screen height and width
+                    var maskHeight = $(document).height();
+                    var maskWidth = $(window).width();
+
+                    //Set heigth and width to mask to fill up the whole screen
+                    $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+                    //transition effect
+                    $('#mask').fadeIn(1000);    
+                    $('#mask').fadeTo("slow",0.8);  
+
+                    //Get the window height and width
+                    var winH = $(window).height();
+                    var winW = $(window).width();
+
+                    //Set the popup window to center
+                    $(id).css('top',  winH/2-$(id).height()/2);
+                    $(id).css('left', winW/2-$(id).width()/2);
+
+                    //transition effect
+                    $(id).fadeIn(2000); 
+
+                }
+
+                function show(e){
+                    e.preventDefault();
+                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                    var idItem = dataItem.IdLocalidad;
+
+                    var id = '#dialog';
+
+                    $('#box').empty();
+                    $('#box').load('{{ path('admin_localidad') }}' + idItem + '/show');
+
+                    //Get the screen height and width
+                    var maskHeight = $(document).height();
+                    var maskWidth = $(window).width();
+
+                    //Set heigth and width to mask to fill up the whole screen
+                    $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+                    //transition effect
+                    $('#mask').fadeIn(1000);    
+                    $('#mask').fadeTo("slow",0.8);  
+
+                    //Get the window height and width
+                    var winH = $(window).height();
+                    var winW = $(window).width();
+
+                    //Set the popup window to center
+                    $(id).css('top',  winH/2-$(id).height()/2);
+                    $(id).css('left', winW/2-$(id).width()/2);
+
+                    //transition effect
+                    $(id).fadeIn(2000); 
+
+                }
+                function agregar(){
+
+                    var id = '#dialog3';
+
+                    $('#box3').empty();
+                    $('#box3').load('{{ path('admin_localidad_new') }}');
+
+                    //Get the screen height and width
+                    var maskHeight = $(document).height();
+                    var maskWidth = $(window).width();
+
+                    //Set heigth and width to mask to fill up the whole screen
+                    $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+                    //transition effect
+                    $('#mask').fadeIn(1000);    
+                    $('#mask').fadeTo("slow",0.8);  
+
+                    //Get the window height and width
+                    var winH = $(window).height();
+                    var winW = $(window).width();
+
+                    //Set the popup window to center
+                    $(id).css('top',  winH/2-$(id).height()/2);
+                    $(id).css('left', winW/2-$(id).width()/2);
+
+                    //transition effect
+                    $(id).fadeIn(2000); 
+
+                }
+            </script>
+        </div>
+</div>
+
+<div id="boxes">
+    <!--Div contenedor de mostrar-->
+    <div id="dialog" class="window mostrar">
+        <a href="#"class="close"/>X</a>
+        <div class="contenido">
+
+            <div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+                    <li class="border_ini"><a href="#box1">Vista previa de la Localidad</a></li>
+                </ul>
+                
+                <div id="box" style="width:100%;">
+                    <div id="box1" class="box">
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+            </p>
+        </div>
+    </div>
+    <!--Div contenedor de edicion-->
+    <div id="dialog2" class="window editar">
+        <a href="#"class="close"/>X</a>
+        <div class="contenido">
+            
+            <div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+                    <li class="border_ini"><a href="#box2">Editar Datos</a></li>
+                </ul>
+                
+                <div id="box">
+                    <img class="loading" src="{{ asset('img/loading-image.gif')}}">
+                    <div id="box2" class="box">
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+            </p>
+        </div>
+    </div>
+    <!--Div contenedor de agregar sismo-->
+    <div id="dialog3" class="window agregar">
+        <a href="#"class="close"/>X</a>
+        <div class="contenido">
+
+            <div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+                    <li class="border_ini"><a href="#box3">Agregar Nueva Localidad</a></li>
+                </ul>
+                
+                <div id="box">
+                    <img class="loading" src="{{ asset('img/loading-image.gif')}}">
+                    <div id="box3" class="box">
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+            </p>
+        </div>
+    </div>
+    <div id="mask"></div>
+</div>
+   
+    <script type="text/javascript" src="{{ asset('js/popup/jquery.scrollTo-min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/popup/jquery.nyroModal.custom.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/popup/efecto_popup.js')}}"></script>
+
+    <!--[if IE]>
+    <style type="text/css">
+        .box { display: block; }
+        #box { overflow: hidden;position: relative; }
+        b { position: absolute; top: 0px; right: 0px; width:1px; height: 251px; overflow: hidden; text-indent: -9999px; }
+    </style>
+    <![endif]-->
+    <script language="javascript" type="text/javascript">
+    $(function() {
+      $('.nyroModal').nyroModal();
+    });
+    </script>
+</body>
+</html>

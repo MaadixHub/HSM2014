@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+            <div class="contenedor_labels">
+                <div class="div_izquierdo_labels">
+                    <div>
+                       <b>Id de Temblor</b><br>
+                       {{ entity.id }}
+                    </div>
+                    <div>
+                       <b>Id de Sismos</b><br>
+                        {{ entity.getSismo().id }}
+                    </div>
+                    <div>
+                       <b>Sismo</b><br>
+                        {{ entity.getSismo().sismo }}
+                    </div>
+                    <div>
+                       <b>Localidad</b><br>
+                        {{ entity.getLocalidad().localidad }}
+                    </div>
+                    <div>
+                       <b>Puntos</b><br>
+                        {{ entity.puntos }}
+                    </div>
+					<div>
+                       <b>Intensidad</b><br>
+                        {{ entity.intensidad }}
+                    </div>
+					<div>
+                       <b>Comentarios</b><br>
+                        {{ entity.comentario }}
+                    </div>
+                </div>
+            </div>
+{% endblock %}

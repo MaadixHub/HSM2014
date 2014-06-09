@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+
+
+        
+            <div class="contenedor_labels">
+                <div class="div_izquierdo_labels">
+                    <div>
+                   <div style="position:fixed;">
+                       <b>Id de Sismo</b><br>
+                       {{ sismoEntity.id }}<br>
+                       <b>Fecha de Sismo</b><br>
+                       {{ sismoEntity.anio }} - {{ sismoEntity.mes }} - {{ sismoEntity.dia }}
+                    </div>
+                    </div>
+                </div>
+
+                <div class="div_derecha_labels">
+                     <table style="margin: 0px -25px;" class="records_list">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Localidad</th>
+                                <th class="Celda_NOficial">Nombre Oficial</th>
+                                <th>Estado</th>
+                                <th>Latitud</th>
+                                <th>Longitud</th>
+                                <th>Intensidad</th>
+								<th>Comentarios</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for temblorEntity in temblorEntities %}
+                            {% if temblorEntity.getLocalidad().id != 736 %}
+                            <tr>
+                                <td>{{ temblorEntity.getLocalidad().id }}</td>
+                                <td>{{ temblorEntity.getLocalidad().localidad }}</td>
+                                <td class="Celda_NOficial">{{ temblorEntity.getLocalidad().nombreOficial }}</td>
+                                <td>{{ temblorEntity.getLocalidad().estado }}</td>
+                                <td>{{ (temblorEntity.getLocalidad().latitud != NULL) ? temblorEntity.getLocalidad().latitud : '-' }}</td>
+                                <td>{{ (temblorEntity.getLocalidad().longitud != NULL) ? temblorEntity.getLocalidad().longitud : '-' }}</td>
+                                <td>{{ temblorEntity.intensidad }}</td>
+								<td><a href="{{ path('admin_temblor_edit', { 'id': temblorEntity.id }) }}">{{ (temblorEntity.comentario != NULL) ? 'SI' : 'NO'}}</a></td>
+                            </tr>
+                            {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+{% endblock %}
+
+

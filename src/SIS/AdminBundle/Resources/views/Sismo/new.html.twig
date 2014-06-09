@@ -1,0 +1,90 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+    <li>
+    	<form class="form" action="{{ path('admin_sismo_create') }}" method="post" {{ form_enctype(form) }}>      
+            {{ form_errors(form) }}
+            <div class="contenedor_inputs_labels">
+                <div class="div_izquierdo">
+                    <div>
+                       {{ form_label(form.sismo, 'Sismo') }}<br>
+                       {{ form_widget(form.sismo) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.anio, 'Año') }}<br>
+                        {{ form_widget(form.anio) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.mes, 'Mes') }}<br>
+                        {{ form_widget(form.mes) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.dia, 'Día') }}<br>
+                        {{ form_widget(form.dia) }}
+                    </div>
+                    <div>                
+                        {{ form_label(form.hora, 'Hora') }}<br>
+                        {{ form_widget(form.hora) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.minuto, 'Minuto') }}<br>
+                        {{ form_widget(form.minuto) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.segundo, 'Segundo') }}<br>
+                        {{ form_widget(form.segundo) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.intensidadMaxima, 'Intensidad Maxima') }}<br>
+                        {{ form_widget(form.intensidadMaxima) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.intensidadEpicentral, 'Intensidad Epicentral') }}<br>
+                        {{ form_widget(form.intensidadEpicentral) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.magnitudEstimada, 'Magnitud Estimada') }}<br>
+                        {{ form_widget(form.magnitudEstimada) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.zonaMacrosismica, 'Zona Macrosismica') }}<br>
+                        {{ form_widget(form.zonaMacrosismica) }}
+                    </div>
+                </div>
+
+                <div class="div_derecha">
+                    <div>
+                        {{ form_label(form.fenomenosAsociados, 'Fenomenos Asociados') }}<br>
+                        {{ form_widget(form.fenomenosAsociados) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.resumenDanos, 'Resumen de Daños') }}<br>
+                        {{ form_widget(form.resumenDanos) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.bibliografia, 'BibliografÍa') }}<br>
+                        {{ form_widget(form.bibliografia) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.interpretacion, 'Interpretación') }}<br>
+                        {{ form_widget(form.interpretacion) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.citaTextual, 'Cita Textual') }}<br>
+                        {{ form_widget(form.citaTextual) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.citaRepresentativa, 'Cita Representativa') }}<br>
+                        {{ form_widget(form.citaRepresentativa) }}
+                    </div>
+                </div>
+            </div>
+            <p>
+			{{ form_rest(form) }}
+                <button class="editar" type="submit" title="Crear Nuevo Sismo"></button>
+            </p>
+        </form>
+    </li>
+</ul>
+{% endblock %}

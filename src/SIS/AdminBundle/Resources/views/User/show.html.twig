@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+
+        
+            <div class="contenedor_labels">
+                <div class="div_izquierdo_labels">
+                    <div>
+                       <b>Id de Usuario</b><br>
+                       {{ entity.id }}
+                    </div>
+                    <div>
+                       <b>Nombre de Usuario</b><br>
+                        {{ entity.username }}
+                    </div>
+                   
+                </div>
+
+            </div>
+{% endblock %}

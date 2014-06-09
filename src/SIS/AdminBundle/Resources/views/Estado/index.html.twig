@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('flexgrid/flexigrid.pack.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('flexgrid/style.css')}}">
+
+	<script type="text/javascript"	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ asset('flexgrid/flexigrid.pack.js')}}"></script>
+
+</head>
+<body>
+
+<h1>Estado list</h1>
+
+<table class="flexme">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Estado</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('admin_estado_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.estado }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('admin_estado_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_estado_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('admin_estado_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+
+
+	<script type="text/javascript">
+		$('.flexme').flexigrid();
+	</script>
+</body>
+</html>

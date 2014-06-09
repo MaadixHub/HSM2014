@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; }
+iframe{width: 97%;  height: 97%;}
+#page-wrap { width: 100%; margin: 10px auto; }
+h1 { font: 36px Georgia, Serif; margin: 20px 0; }
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+.tabs { list-style: none; }
+.tabs li { display: inline; }
+.tabs li a { color: black; float: left; display: block; padding: 4px 10px; margin-left: -1px; position: relative; left: 1px; background: white; text-decoration: none; }
+.tabs li a:hover { background: #ccc; }
+
+
+/* Stuff for example seven - including conditionals below */
+
+#ie-test { position: relative; width: 100%; }
+#boxLinks { list-style: none; overflow: hidden; }
+#boxLinks li { display: inline; }
+#boxLinks li a { background: #e99f00;   padding: 5px 10px; color: #fff; text-decoration: none; border: 1px solid #ccc; float: left; display: block; margin-left: -1px; position: relative; left: 1px; }
+#box { height: 600px; width:100%;background: #fff; border-radius: 0 10px 10px 10px; border: 1px solid #ccc; overflow: auto; padding: 0px 30px 0px 30px; position: relative; top: -1px; }
+.box { display: none;  padding:20px 0px; overflow: auto; display: block; position: relative;  }
+#box1:target, #box2:target, #box3:target { display: block; }
+#boxLinks .border_ini a{border-radius: 10px 10px 0 0;}
+#boxLinks .border_fin a{border-radius: 0 10px 0 0;}
+#dialog, #dialog2, #dialog3, #dialog4, #dialog5, #dialog6{
+	margin-top: 80px;
+}

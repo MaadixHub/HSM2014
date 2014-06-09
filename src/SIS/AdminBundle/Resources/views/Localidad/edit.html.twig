@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+    <li>
+        <form action="{{ path('admin_localidad_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+            {{ form_errors(edit_form) }}
+            <div class="espacio"></div>
+            <div class="contenedor_inputs_labels">
+                <div style="margin-left: -50px;" class="div_izquierdo">
+                    <div>
+                       {{ form_label(edit_form.localidad, 'Localidad') }}<br>
+                       {{ form_widget(edit_form.localidad) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.nombreOficial, 'Nombre Oficial') }}<br>
+                        {{ form_widget(edit_form.nombreOficial) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.latitud, 'Latitud') }}<br>
+                        {{ form_widget(edit_form.latitud) }}
+                    </div>
+                    <div>                
+                        {{ form_label(edit_form.longitud, 'Longitud') }}<br>
+                        {{ form_widget(edit_form.longitud) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.estado, 'Estado') }}<br>
+                        {{ form_widget(edit_form.estado) }}
+                    </div>
+                </div>
+
+                <div class="div_derecha">
+                    
+                </div>
+            </div>
+            <p>
+			{{ form_rest(edit_form) }}
+                <button class="editar" type="submit" title="Editar Archio"></button>
+            </p>
+        </form>
+    </li>
+    <li>
+        <!--<form action="{{ path('admin_localidad_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button class="eliminar" type="submit" title="Eliminar Archivo"></button>
+        </form>-->
+    </li>
+</ul>
+{% endblock %}

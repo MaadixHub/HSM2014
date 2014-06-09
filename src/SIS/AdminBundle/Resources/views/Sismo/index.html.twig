@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Administrador</title>
+    <meta content="text/html; charset=[b]iso-8859-1[/b]" http-equiv="Content-Type" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/generalAdmon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/popupAdmon/popup_administrador.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/popupAdmon/popup_administrador_tabulador.css')}}">
+    <!--Estilos del datagrid-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/datagrid/datagrid.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/datagrid/kendo.common.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/datagrid/kendo.default.min.css')}}">
+    <!--Estilos del datagrid-->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <!--Scripts del datagrid-->
+    <script type="text/javascript" src="{{ asset('js/datagrid/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/datagrid/kendo.web.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/datagrid/console.js')}}"></script>
+    <!--Scripts del datagrid-->
+</head>
+<body>
+    <script language="javascript" type="text/javascript">
+    function createRandomData(count) {
+    var data = [ 
+        {% for entity in entities %}
+            {Id: {{ entity.id }}, Sismo: "{{ entity.sismo }}", Fecha: "{{ entity.anio }}-{{ entity.mes }}-{{ entity.dia }}", Intensidadmaxima: "{{ entity.intensidadMaxima }}", Magnitudestimada: "{{ entity.magnitudEstimada }}", Fenomenosasociados: "{{ (entity.fenomenosAsociados != NULL) ? 'SI' : 'NO' }}", Resumendanos: "{{ (entity.resumenDanos != NULL) ? 'SI' : 'NO' }}", Citarepresentativa: "{{ (entity.citaRepresentativa != NULL) ? 'SI' : 'NO' }}", Bibliografia: "{{ (entity.bibliografia != NULL) ? 'SI' : 'NO' }}", Interpretacion: "{{ (entity.interpretacion != NULL) ? 'SI' : 'NO' }}", Citatextual: "{{ (entity.citaTextual != NULL) ? 'SI' : 'NO' }}", Actions: ""},
+        {% endfor %}
+        ],
+
+        now = new Date();
+    return data;
+}
+    </script>
+
+    <div id="header">
+        <img src="{{ asset('img/logo_small2.png')}}" alt="Catalogo de Sismos en México">
+        <a class="logout" href="#">Cerrar Sesión</a>
+        <div class="menu">
+            <a class="agregar_nuevo_elemento"  href="#dialog3" onclick="agregar()" name="modal"><img src="{{ asset('img/img_grid/new.png')}}" title="Agregar Nuevo Sismo"></a>
+            <ul>
+                <li><a href="{{ path('admin_sismo') }}">Sismos</a></li>
+                <li><a href="{{ path('admin_temblor') }}">Temblor</a></li>
+                <li><a href="{{ path('admin_zonaMacrosismica') }}">Zona Macrosismica</a></li>
+                <li><a href="{{ path('admin_localidad') }}">Localidad</a></li>
+                <li><a href="{{ path('admin_user') }}">Nuevo Usuario</a></li>
+            </ul>
+        </div>
+    </div>
+
+<div id="content">
+ <div id="example" class="k-content">
+            <div id="grid"></div>
+
+            <script>
+                $(document).ready(function() {
+                    $("#grid").kendoGrid({
+                        dataSource: {
+                            data: createRandomData(50),
+                            schema: {
+                                model: {
+                                    fields: {
+                                        Id: { type: "number"},
+                                        Sismo: { type: "string" },
+                                        Fecha: { type: "string" },
+                                        Intensidadmaxima: { type: "string" },
+                                        Magnitudestimada: { type: "string" },
+                                        Fenomenosasociados: { type: "string" },
+                                        Resumendanos: { type: "string" },
+                                        Citarepresentativa: { type: "string" },
+                                        Bibliografia: { type: "string" },
+                                        Interpretacion: { type: "string" },
+                                        Citatextual: { type: "string" },
+                                        Actions: { type: "string" }
+                                    }
+                                }
+                            },
+                            pageSize: 20
+                        },
+                        scrollable: true,
+                        sortable: true,
+                        filterable: true,
+                        reorderable: true,
+                        resizable: true,
+                        pageable: {
+                            input: true,
+                            numeric: true
+                        },
+
+                        columns: [
+                            {
+                                field: "Id",
+                                width: 15
+                            },
+                            {
+                                field: "Sismo",
+                                width: 45
+                            },
+                            {
+                                field: "Fecha",
+                                title: "Fecha",
+                                width: 35
+                            },
+                            {
+                                field: "Intensidadmaxima",
+                                title: "Intensidad <BR/>Máxima",
+                                width: 35
+                            },
+                            {
+                                field: "Magnitudestimada",
+                                title: "Magnitud <BR/>Estimada",
+                                width: 35
+                            },
+                            {
+                                field: "Fenomenosasociados",
+                                title: "Fenomenos <BR/>Asociados",
+                                width: 35
+                            },
+                            {
+                                field: "Resumendanos",
+                                title: "Resumen <BR/>de Daños",
+                                width: 35
+                            },
+                            {
+                                field: "Citarepresentativa",
+                                title: "Cita <BR/>Representativa",
+                                width: 35
+                            },
+                            {
+                                field: "Bibliografia",
+                                title: "Bibliografía",
+                                width: 35
+                            },
+                            {
+                                field: "Interpretacion",
+                                title: "Interpretación",
+                                width: 40
+                            },
+                            {
+                                field: "Citatextual",
+                                title: "Cita Textual",
+                                width: 40
+                            },
+                            {
+                                command: [{ text: "Ver", click: show },{ text: "Editar", click: edit }] , title: "Eventos", width: 40
+                            },
+                            {
+                                command: [{ text: "Mostrar", click: showLocalidades }, { text: "Nueva", click: agregar_localidades}, { text: "Edit", click: editar_localidades}] , title: "Localidades", width: 60
+                            },
+                        ]
+                    });
+                });
+
+				function edit(e){
+					e.preventDefault();
+					var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+					var idItem = dataItem.Id;
+
+					var id = '#dialog2';
+
+					$('#box2').empty();
+					$('#box2').load('{{ path('admin_sismo') }}' + idItem + '/edit');
+
+					//Get the screen height and width
+					var maskHeight = $(document).height();
+					var maskWidth = $(window).width();
+
+					//Set heigth and width to mask to fill up the whole screen
+					$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+					//transition effect
+					$('#mask').fadeIn(1000);	
+					$('#mask').fadeTo("slow",0.8);	
+
+					//Get the window height and width
+					var winH = $(window).height();
+					var winW = $(window).width();
+
+					//Set the popup window to center
+					
+					$(id).css('left', winW/2-$(id).width()/2);
+
+					//transition effect
+					$(id).fadeIn(2000); 
+
+				}
+
+				function show(e){
+					e.preventDefault();
+					var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+					var idItem = dataItem.Id;
+
+					var id = '#dialog';
+
+					$('#box').empty();
+					$('#box').load('{{ path('admin_sismo') }}' + idItem + '/show');
+
+					//Get the screen height and width
+					var maskHeight = $(document).height();
+					var maskWidth = $(window).width();
+
+					//Set heigth and width to mask to fill up the whole screen
+					$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+					//transition effect
+					$('#mask').fadeIn(1000);	
+					$('#mask').fadeTo("slow",0.8);	
+
+					//Get the window height and width
+					var winH = $(window).height();
+					var winW = $(window).width();
+
+					//Set the popup window to center
+					$(id).css('left', winW/2-$(id).width()/2);
+
+					//transition effect
+					$(id).fadeIn(2000); 
+
+				}
+                function agregar(){
+
+                    var id = '#dialog3';
+
+                    $('#box3').empty();
+                    $('#box3').load('{{ path('admin_sismo_new') }}');
+
+                    //Get the screen height and width
+                    var maskHeight = $(document).height();
+                    var maskWidth = $(window).width();
+
+                    //Set heigth and width to mask to fill up the whole screen
+                    $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+                    //transition effect
+                    $('#mask').fadeIn(1000);    
+                    $('#mask').fadeTo("slow",0.8);  
+
+                    //Get the window height and width
+                    var winH = $(window).height();
+                    var winW = $(window).width();
+
+                    //Set the popup window to center
+         
+                    $(id).css('left', winW/2-$(id).width()/2);
+
+                    //transition effect
+                    $(id).fadeIn(2000); 
+
+                }
+
+                function agregar_localidades(e){
+                    e.preventDefault();
+                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                    var idItem = dataItem.Id;
+
+                    var id = '#dialog4';
+
+                    $('#box4').empty();
+                    $('#box4').load('{{ path('admin_temblor_new') }}' + '?idSismo=' + idItem);
+
+                    //Get the screen height and width
+                    var maskHeight = $(document).height();
+                    var maskWidth = $(window).width();
+
+                    //Set heigth and width to mask to fill up the whole screen
+                    $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+                    //transition effect
+                    $('#mask').fadeIn(1000);    
+                    $('#mask').fadeTo("slow",0.8);  
+
+                    //Get the window height and width
+                    var winH = $(window).height();
+                    var winW = $(window).width();
+
+                    //Set the popup window to center
+              
+                    $(id).css('left', winW/2-$(id).width()/2);
+
+                    //transition effect
+                    $(id).fadeIn(2000); 
+
+                }
+
+				function editar_localidades(e){
+                    e.preventDefault();
+                    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+                    var idItem = dataItem.Id;
+
+                    var id = '#dialog6';
+
+                    $('#box6').empty();
+					$('#box6').load('{{ path('admin_temblor') }}' + idItem + '/editLocalidades');
+
+                    //Get the screen height and width
+                    var maskHeight = $(document).height();
+                    var maskWidth = $(window).width();
+
+                    //Set heigth and width to mask to fill up the whole screen
+                    $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+                    //transition effect
+                    $('#mask').fadeIn(1000);    
+                    $('#mask').fadeTo("slow",0.8);  
+
+                    //Get the window height and width
+                    var winH = $(window).height();
+                    var winW = $(window).width();
+
+                    //Set the popup window to center
+                   
+                    $(id).css('left', winW/2-$(id).width()/2);
+
+                    //transition effect
+                    $(id).fadeIn(2000); 
+
+                }
+
+				function showLocalidades(e){
+					e.preventDefault();
+					var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+					var idItem = dataItem.Id;
+
+					var id = '#dialog5';
+
+					$('#box5').empty();
+					$('#box5').load('{{ path('admin_sismo') }}' + idItem + '/localidades');
+
+					//Get the screen height and width
+					var maskHeight = $(document).height();
+					var maskWidth = $(window).width();
+
+					//Set heigth and width to mask to fill up the whole screen
+					$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+					//transition effect
+					$('#mask').fadeIn(1000);	
+					$('#mask').fadeTo("slow",0.8);	
+
+					//Get the window height and width
+					var winH = $(window).height();
+					var winW = $(window).width();
+
+					//Set the popup window to center
+	
+					$(id).css('left', winW/2-$(id).width()/2);
+
+					//transition effect
+					$(id).fadeIn(2000); 
+
+				}
+            </script>
+        </div>
+</div>
+
+<div id="boxes">
+    <!--Div contenedor de mostrar-->
+    <div id="dialog" class="window mostrar" style="width:80%; margin-left:-50px;">
+        <a href="#"class="close"/>X</a>
+        <div class="contenido">
+
+            <div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+                    <li class="border_ini"><a href="#box1">Vista previa de Sismo</a></li>
+                </ul>
+                
+                <div id="box">
+                    <div id="box1" class="box">
+                        
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+            </p>
+        </div>
+    </div>
+    <!--Div contenedor de edicion-->
+    <div id="dialog2" class="window editar"  style="width:80%; margin-left:-50px;">
+        <a href="#"class="close"/>X</a>
+        <div class="contenido">
+            
+            <div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+                    <li class="border_ini"><a href="#box2">Editar Datos</a></li>
+                </ul>
+                
+                <div id="box">
+                    <div id="box2" class="box">
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+            </p>
+        </div>
+    </div>
+    <!--Div contenedor de agregar sismo-->
+    <div id="dialog3" class="window agregar"  style="width:80%; margin-left:-50px;">
+        <a href="#"class="close"/>X</a>
+        <div class="contenido">
+
+            <div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+                    <li class="border_ini"><a href="#box3">Agregar Nuevo Sismo</a></li>
+                </ul>
+                
+                <div id="box">
+                    <div id="box3" class="box">
+                        
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+            </p>
+        </div>
+    </div>
+    <!--Div contenedor de listado de localidades-->
+    <div id="dialog4" class="window agregar_localidades"  style="width:80%; margin-left:-50px;">
+        <a href="#"class="close"/>X</a>
+        <div class="contenido">
+
+            <div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+                    <li class="border_ini"><a href="#box4">Listado de Localidades</a></li>
+                </ul>
+                
+                <div id="box">
+                    <div id="box4" class="box">
+                        
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+            </p>
+        </div>
+    </div>
+	<!--Div contenedor de listado de localidades-->
+    <div id="dialog5" class="window mostrar_localidades"  style="width:80%; margin-left:-50px;">
+        <a href="#"class="close"/>X</a>
+        <div class="contenido">
+
+            <div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+                    <li class="border_ini"><a href="#box5">Listado de Localidades</a></li>
+                </ul>
+                
+                <div id="box">
+                    <div id="box5" class="box">
+                        
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+            </p>
+        </div>
+    </div>
+	<!--Div contenedor de edicion de localidades-->
+    <div id="dialog6" class="window editar_localidades"  style="width:80%; margin-left:-50px;">
+        <a href="#"class="close"/>X</a>
+        <div class="contenido">
+
+            <div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+                    <li class="border_ini"><a href="#box5">Edición de Localidades</a></li>
+                </ul>
+                
+                <div id="box">
+                    <div id="box6" class="box">
+                        
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+            </p>
+        </div>
+    </div>
+    <div id="mask"></div>
+</div>
+   
+    <script type="text/javascript" src="{{ asset('js/popup/jquery.scrollTo-min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/popup/jquery.nyroModal.custom.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/popup/efecto_popup.js')}}"></script>
+
+    <!--[if IE]>
+    <style type="text/css">
+        .box { display: block; }
+        #box { overflow: hidden;position: relative; }
+        b { position: absolute; top: 0px; right: 0px; width:1px; height: 251px; overflow: hidden; text-indent: -9999px; }
+    </style>
+    <![endif]-->
+    <script language="javascript" type="text/javascript">
+    $(function() {
+      $('.nyroModal').nyroModal();
+    });
+    </script>
+</body>
+</html>

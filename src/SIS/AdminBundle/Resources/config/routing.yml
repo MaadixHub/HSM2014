@@ -1,0 +1,4 @@
+SISAnnotations:
+    resource: "@SISAdminBundle/Controller/"
+    prefix: /
+    type: annotation

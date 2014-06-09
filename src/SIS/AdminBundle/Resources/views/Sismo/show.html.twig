@@ -1,0 +1,82 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+
+        
+            <div class="contenedor_labels">
+                <div class="div_izquierdo_labels">
+                    <div>
+                       <b>Id de Sismo</b><br>
+                       {{ entity.id }}
+                    </div>
+                    <div>
+                       <b>Sismo</b><br>
+                        {{ entity.sismo }}
+                    </div>
+                    <div>
+                        <b>Año</b><br>
+                        {{ entity.anio }}
+                    </div>
+                    <div>
+                        <b>Mes</b><br>
+                        {{ entity.mes }}
+                    </div>
+                    <div>                
+                        <b>Día</b><br>
+                        {{ entity.dia }}
+                    </div>
+                    <div>
+                        <b>Hora</b><br>
+                        {{ entity.hora }}
+                    </div>
+                    <div>
+                        <b>Minuto</b><br>
+                        {{ entity.minuto }}
+                    </div>
+                    <div>
+                        <b>Segundo</b><br>
+                        {{ entity.segundo }}
+                    </div>
+                    <div>
+                        <b>Intensidad Máxima</b><br>
+                        {{ entity.intensidadMaxima }}
+                    </div>
+                    <div>
+                        <b>Intensidad Epicentral</b><br>
+                        {{ entity.intensidadEpicentral }}
+                    </div>
+                    <div>
+                        <b>Magnitud Estimada</b><br>
+                        {{ entity.magnitudEstimada }}
+                    </div>
+                </div>
+
+                <div class="div_derecha_labels">
+                    <div>
+                        <b>Fenomenos Asociados</b><br>
+                        <PRE class="prestyle">{{ entity.fenomenosAsociados }}</PRE>
+                    </div>
+                    <div>
+                        <b>Resumen de Daños</b><br>
+                        <PRE class="prestyle">{{ entity.resumenDanos }}</PRE>
+                    </div>
+                    <div>
+                        <b>Cita Representativa</b><br>
+                        <PRE class="prestyle">{{ entity.citaRepresentativa }}</PRE>
+                    </div>
+                    <div>
+                        <b>Bibliografía</b><br>
+                        <PRE class="prestyle">{{ entity.bibliografia }}</PRE>
+                    </div>
+                    <div>
+                        <b>Interpretación</b><br>
+                        <PRE class="prestyle">{{ entity.interpretacion }}</PRE>
+                    </div>
+                    <div>
+                        <b>Cita Textual</b><br>
+                        <PRE class="prestyle">{{ entity.citaTextual }}</PRE>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

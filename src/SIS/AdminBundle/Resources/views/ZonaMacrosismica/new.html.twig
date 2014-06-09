@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+    <li>
+    	<form class="form" action="{{ path('admin_zonaMacrosismica_create') }}" method="post" {{ form_enctype(form) }}>      
+            {{ form_errors(form) }}
+            <div class="contenedor_inputs_labels">
+                <div class="div_izquierdo">
+                	<br><br>
+                    <div>
+                       {{ form_label(form.zonaMacrosismica, 'Zona Macrosismica') }}<br><br>
+                       {{ form_widget(form.zonaMacrosismica) }}
+                    </div>
+                    
+                </div>
+
+                <div class="div_derecha">
+                    
+                </div>
+            </div>
+            <p>
+			{{ form_rest(form) }}
+                <button class="editar" type="submit" title="Crear Nuevo Sismo"></button>
+            </p>
+        </form>
+    </li>
+</ul>
+{% endblock %}

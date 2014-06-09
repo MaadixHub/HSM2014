@@ -1,0 +1,82 @@
+*{
+  margin:0 auto;
+  padding: 0 auto;
+}
+ul li{list-style: none;}
+b{font-family: arial;}
+.form{display: inline-block;}
+.form label{display: inline-block; float: left; }
+.form input{display: inline-block; float: right; width: 230px;}
+.form textarea{display: inline-block; float: left; width:650px;max-width: 650px;resize: auto;}
+
+.record_actions button {border:solid 0px; width: 50px; height: 50px; cursor: pointer;}
+.record_actions .editar{margin-top: 0px;  float: right; background:url(../../img/editar.png) no-repeat; background-position: 0 auto; background-size: 45px;}
+.record_actions .eliminar{margin-top:-15px; background:url(../../img/basura.png) no-repeat; background-position: 0 auto; background-size: 45px;}
+
+.contenedor_inputs_labels{
+  width: 790px;
+  height: 500px;
+  background: #FFF;
+  overflow-x:none !important;  overflow-y:auto !important; 
+  margin-left: 210px;
+}
+.contenedor_inputs_labels .div_izquierdo{float: left;}
+.contenedor_inputs_labels .div_derecha{float: left; width: 500px; margin-top: -40px; margin-left: 0px;}
+.contenedor_inputs_labels .div_derecha div{margin-top: 40px; width: 400px;}
+#sis_adminbundle_sismotype_citaRepresentativa{height: 100px;}
+#sis_adminbundle_temblortype_localidad{width: 235px;}
+#sis_adminbundle_temblortype_intensidad{position: absolute; width: 235px; float: left;}
+#sis_adminbundle_temblortype_comentario{position: absolute; margin-top: 10px; width: 700px; height: 30px;}
+.comentario_label{position: absolute;}
+#sis_adminbundle_localidadtype_estado
+{
+  width: 235px;
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+#sis_adminbundle_usertype_password_first
+{
+margin-bottom: 20px;
+margin-top: 0px;
+}
+.repass{
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 0px;
+}
+#sis_adminbundle_usertype_user_roles{
+  display: block;
+  margin-top: 50px;
+  margin-left: 0px;
+}
+/*Estilos del show twig*/
+.contenedor_labels{
+width: 1260px;
+height: 630px;
+background: white;
+overflow: auto;
+padding: 50px 0;
+}
+
+.contenedor_labels .div_izquierdo_labels{float: left; position: fixed; left: 13%;}
+@media screen and (max-width: 1590px){
+.contenedor_labels .div_izquierdo_labels{left: 170px !important;}
+
+}
+.contenedor_labels .div_izquierdo_labels div{margin-bottom: 10px; width: 180px; text-align: justify; margin-left: -25px;}
+.contenedor_labels .div_derecha_labels{float: left; width: 1060px; margin-top: -40px; margin-left: 140px;}
+.contenedor_labels .div_derecha_labels div{margin-top: 40px; width: 950px; margin-left: 150px; text-align: justify;}
+
+.records_list tr th, .records_list tbody tr td {
+  width: 200px;
+  text-align: center;
+  padding: 5px 15px;
+}
+.records_list .Celda_NOficial{width: 350px; padding: 5px 15px;}
+#sis_adminbundle_sismotype_zonaMacrosismica{
+  display: block;
+  margin-left: 0px;
+  width: 230px;
+  margin-top: 5px;
+}

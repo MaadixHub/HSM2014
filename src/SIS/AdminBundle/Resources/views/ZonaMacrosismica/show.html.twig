@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+
+<div class="contenedor_labels">
+                <div class="div_izquierdo_labels">
+                    <div>
+                        <b>Id de Zona Macrosismica</b><br>
+                       {{ entity.id }}
+                    </div>
+                    <div>
+                        <b>Zona Macrosismica</b><br>
+                       {{ entity.zonaMacrosismica }}
+                    </div>
+                </div>
+            </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+    <li>
+    	<form class="form" action="{{ path('admin_localidad_create') }}" method="post" {{ form_enctype(form) }}>      
+            {{ form_errors(form) }}
+            <div class="contenedor_inputs_labels">
+                <div class="div_izquierdo">
+                    <div>
+                       {{ form_label(form.localidad, 'Localidad') }}<br>
+                       {{ form_widget(form.localidad) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.nombreOficial, 'Nombre Oficial') }}<br>
+                        {{ form_widget(form.nombreOficial) }}
+                    </div>
+                    <div>                
+                        {{ form_label(form.latitud, 'Latitud') }}<br>
+                        {{ form_widget(form.latitud) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.longitud, 'Longitud') }}<br>
+                        {{ form_widget(form.longitud) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.estado, 'Estado') }}<br>
+                        {{ form_widget(form.estado) }}
+                    </div>
+                </div>
+
+                <div class="div_derecha">
+                   
+                </div>
+            </div>
+            <p>
+			{{ form_rest(form) }}
+                <button class="editar" type="submit" title="Crear Nuevo Sismo"></button>
+            </p>
+        </form>
+    </li>
+</ul>
+{% endblock %}

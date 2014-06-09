@@ -1,0 +1,1 @@
+[06-Feb-2014 13:56:31 CST6CDT] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 112641 bytes) in /home/sismoshi/public_html/panel/app/cache/prod/twig/01/ba/9ba0c3096967eb7c404ddb462b7e.php on line 87

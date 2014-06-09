@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+    <li>
+        <form class="form" action="{{ path('admin_user_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+            {{ form_errors(edit_form) }}
+            <div class="espacio"></div>
+            <div class="contenedor_inputs_labels">
+                <div class="div_izquierdo">
+                    <div>
+                       {{ form_label(edit_form.username, 'Nombre de Usuario') }}<br>
+                       {{ form_widget(edit_form.username) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.password, 'Password') }}<br>
+                        <p style="margin-top:40px; margin-left:0px;" class="repass">Repetir Password</p><br>
+                        {{ form_widget(edit_form.password) }}
+                    </div><br><br>
+                    <div>
+                        {{ form_label(edit_form.user_roles, 'Tipo de Usuario') }}<br><br>
+                        {{ form_widget(edit_form.user_roles) }}
+                    </div>
+                </div>
+            </div>
+            <p>
+			{{ form_rest(edit_form) }}
+                <button class="editar" type="submit" title="Editar Archio"></button>
+            </p>
+        </form>
+    </li>
+    <li>
+        <form action="{{ path('admin_user_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button class="eliminar" type="submit" title="Eliminar Archivo"></button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

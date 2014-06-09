@@ -1,0 +1,95 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<ul class="record_actions">
+
+{% set count = 0 %}
+
+{% for entity in entities %}
+
+    <li>
+        <form id="{{entity.id}}" class="form" action="{{ path('admin_temblor_update_localidades') }}" method="post" {{ form_enctype(edit_form[count]) }}>
+            {{ form_errors(edit_form[count]) }}
+            <div class="espacio"></div>
+            <div class="contenedor_inputs_labels">
+                <div class="div_izquierdo">
+                    <div class="sismo">
+                       {{ form_label(edit_form[count].sismo, 'Sismo') }}<br>
+                       {{ form_widget(edit_form[count].sismo) }}
+                    </div>
+                    <div class="localidad">
+                        {{ form_label(edit_form[count].localidad, 'Localidad') }}<br>
+                        {{ form_widget(edit_form[count].localidad) }}
+                    </div>
+					<div class="intensidad" style="margin-bottom: 10px;">
+                        {{ form_label(edit_form[count].intensidad, 'Intensidad') }}<br>
+                        {{ form_widget(edit_form[count].intensidad) }}
+                    </div>
+					<div class="comentario" style="position: absolute; margin-top: 10px;">
+                        <div class="comentario_label">{{ form_label(edit_form[count].comentario, 'Comentario') }}</div><br>
+                        {{ form_widget(edit_form[count].comentario) }}
+                    </div>
+                </div>
+            </div>
+            <p>
+			{{ form_rest(edit_form[count]) }}
+                <button class="editar" type="submit" title="Editar Archio"></button>
+            </p>
+        </form>
+    </li>
+
+	{% set count = count + 1 %}
+
+{% endfor %}
+
+</ul>
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+$("select[id != sis_adminbundle_temblortype_localidad]").attr('disabled','disabled');
+
+   //listen for the form beeing submitted
+   $(".form").submit(function(){
+      //get the url for the form
+      var url=$(".form").attr("action");
+
+	  var sisId=$(".form").attr("id");
+//	  var sisId = $(this).find("div div div[class=sismo] select").val();
+	  var localidad = $(this).find("div div div[class=localidad] select").val();
+	  var intensidad = $(this).find("div div div[class=intensidad] input").val();
+	  var comentario = $(this).find("div div div[class=comentario] textarea").val();
+
+      //start send the post request
+       $.post(url,{
+           id: sisId,
+		   loc: localidad,
+		   inte: intensidad,
+		   com: comentario
+       },function(data){
+           //the response is in the data variable
+   
+           if(data=="success" ){           
+				alert("La localidad ha sido actualizada satisfactoriamente");
+           }else{
+			//bad request
+           }
+       });//It is silly. But you should not write 'json' or any thing as the fourth parameter. It should be undefined. I'll explain it futher down
+
+      //we dont what the browser to submit the form
+      return false;
+   });
+
+
+});
+
+</script>
+
+{% endblock %}

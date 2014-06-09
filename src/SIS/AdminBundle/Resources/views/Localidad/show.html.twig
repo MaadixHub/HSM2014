@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+
+        
+            <div class="contenedor_labels">
+                <div class="div_izquierdo_labels">
+                    <div>
+                       <b>Id de Localidad</b><br>
+                       {{ entity.id }}
+                    </div>
+                    <div>
+                       <b>Localidad</b><br>
+                        {{ entity.localidad }}
+                    </div>
+                    <div>
+                        <b>Nombre Oficial</b><br>
+                        {{ entity.nombreOficial }}
+                    </div>
+                    <div>
+                        <b>Latitud</b><br>
+                        {{ entity.latitud }}
+                    </div>
+                    <div>                
+                        <b>Longitud</b><br>
+                        {{ entity.longitud }}
+                    </div>
+                    <div>
+                        <b>Estado</b><br>
+                        {{ entity.estado }}
+                    </div>
+                </div>
+
+                <div class="div_derecha_labels">
+                   
+                </div>
+            </div>
+{% endblock %}

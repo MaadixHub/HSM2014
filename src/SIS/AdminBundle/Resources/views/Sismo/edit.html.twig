@@ -1,0 +1,97 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+    <li>
+        <form style="width:100%;" class="form" action="{{ path('admin_sismo_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+            {{ form_errors(edit_form) }}
+            <div class="espacio"></div>
+            <div class="contenedor_inputs_labels">
+                <div class="div_izquierdo" style="margin-left:-17%; position:fixed;">
+                    <div>
+                       {{ form_label(edit_form.sismo, 'Sismo') }}<br>
+                       {{ form_widget(edit_form.sismo) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.anio, 'Año') }}<br>
+                        {{ form_widget(edit_form.anio) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.mes, 'Mes') }}<br>
+                        {{ form_widget(edit_form.mes) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.dia, 'Día') }}<br>
+                        {{ form_widget(edit_form.dia) }}
+                    </div>
+                    <div>                
+                        {{ form_label(edit_form.hora, 'Hora') }}<br>
+                        {{ form_widget(edit_form.hora) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.minuto, 'Minuto') }}<br>
+                        {{ form_widget(edit_form.minuto) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.segundo, 'Segundo') }}<br>
+                        {{ form_widget(edit_form.segundo) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.intensidadMaxima, 'Intensidad Maxima') }}<br>
+                        {{ form_widget(edit_form.intensidadMaxima) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.intensidadEpicentral, 'Intensidad Epicentral') }}<br>
+                        {{ form_widget(edit_form.intensidadEpicentral) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.magnitudEstimada, 'Magnitud Estimada') }}<br>
+                        {{ form_widget(edit_form.magnitudEstimada) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.zonaMacrosismica, 'Zona Macrosismica') }}<br>
+                        {{ form_widget(edit_form.zonaMacrosismica) }}
+                    </div>
+                </div>
+
+                <div class="div_derecha">
+                    <div>
+                        {{ form_label(edit_form.fenomenosAsociados, 'Fenomenos Asociados') }}<br>
+                        {{ form_widget(edit_form.fenomenosAsociados) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.resumenDanos, 'Resumen de Daños') }}<br>
+                        {{ form_widget(edit_form.resumenDanos) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.bibliografia, 'BibliografÍa') }}<br>
+                        {{ form_widget(edit_form.bibliografia) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.interpretacion, 'Interpretación') }}<br>
+                        {{ form_widget(edit_form.interpretacion) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.citaTextual, 'Cita Textual') }}<br>
+                        {{ form_widget(edit_form.citaTextual) }}
+                    </div>
+                    <div>
+                        {{ form_label(edit_form.citaRepresentativa, 'Cita Representativa') }}<br>
+                        {{ form_widget(edit_form.citaRepresentativa) }}
+                    </div>
+                </div>
+            </div>
+            <p>
+			{{ form_rest(edit_form) }}
+                <button class="editar" type="submit" title="Editar Archio"></button>
+            </p>
+        </form>
+    </li>
+    <li>
+       <!-- <form action="{{ path('admin_sismo_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button class="eliminar" type="submit" title="Eliminar Archivo"></button>
+        </form>-->
+    </li>
+</ul>
+{% endblock %}

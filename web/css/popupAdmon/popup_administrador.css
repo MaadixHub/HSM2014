@@ -1,0 +1,54 @@
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+  border-radius: 15px 0px 15px 15px;
+}
+.loading{
+  position: absolute;
+}
+#boxes #dialog, #boxes #dialog1, #boxes #dialog2 , #boxes #dialog3, #boxes #dialog4, #boxes #dialog5, #boxes #dialog6 {
+  width:1200px; 
+  height:650px;
+  padding:10px;
+  top:-60px !important;
+}
+.close{
+  position:absolute;
+  padding:5px 10px 5px 10px;
+  right:0px;
+  top:0px;
+  font-size: 10pt;
+  font-family: arial;
+  color:#fff;
+  background: #e99f00;
+  border-radius:3px;
+}
+.close:hover{background: #c38b13;}
+.contenido img{float:left; margin:250px 420px;}
+.contenido p{text-align: justify; width:95%; }
+.contenido h1{color:#c38b13;}
+.records_list tr th, .records_list tr td {
+  width: 200px;
+  text-align: center;
+}
+.records_list tr th{background: #ccc;}
+.records_list tr td {height: 50px;}
+
+textarea {
+   resize: none;
+}

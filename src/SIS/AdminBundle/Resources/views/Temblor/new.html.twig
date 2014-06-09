@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}  
+<ul class="record_actions">
+    <li>
+    	<form class="form" action="{{ path('admin_temblor_create') }}" method="post" {{ form_enctype(form) }}>
+            {{ form_errors(form) }}
+            <div class="espacio"></div>
+            <div class="contenedor_inputs_labels">
+                <div class="div_izquierdo">
+                    <div>
+                       {{ form_label(form.sismo, 'Sismo') }}<br>
+                       {{ form_widget(form.sismo) }}
+                    </div>
+                    <br>
+                    <div>
+                        {{ form_label(form.localidad, 'Localidad') }}<br>
+                        {{ form_widget(form.localidad) }}
+                    </div>
+					<br>
+                    <div>
+                        {{ form_label(form.intensidad, 'Intensidad') }}<br>
+                        {{ form_widget(form.intensidad) }}
+                    </div>
+					<br>
+                    <div>
+                        {{ form_label(form.comentario, 'Comentario') }}<br>
+                        {{ form_widget(form.comentario) }}
+                    </div>
+                </div>
+            </div>
+            <p>
+			{{ form_rest(form) }}
+                <button class="editar" type="submit" title="Enlazar Localidad"></button>
+            </p>
+        </form>
+    </li>
+</ul>
+{% endblock %}
+
+{% block javascripts %}
+<script language="javascript" type="text/javascript">
+
+$("#sis_adminbundle_temblortype_sismo").attr('disabled','disabled');
+
+</script>
+
+{% endblock %}

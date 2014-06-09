@@ -1,0 +1,717 @@
+/*This file contains general theme styles*/
+
+*{padding:0; margin:0;}
+
+
+/*==Default styles for HTML 4==*/
+
+html, address,
+blockquote,
+body, dd, div,
+dl, dt, fieldset, form,
+frame, frameset,
+h1, h2, h3, h4,
+h5, h6, noframes,
+ol, p, ul, center,
+dir, hr, menu, pre   { display: block; unicode-bidi: embed }
+fieldset		{border:none;}
+li              { display: list-item; list-style:none;}
+head            { display: none }
+table           { display: table }
+tr              { display: table-row }
+thead           { display: table-header-group }
+tbody           { display: table-row-group }
+tfoot           { display: table-footer-group }
+col             { display: table-column }
+colgroup        { display: table-column-group }
+td, th          { display: table-cell }
+caption         { display: table-caption }
+th              { font-weight: bolder; text-align: center }
+caption         { text-align: center }
+body            { margin: 0px }
+h1              { font-size: 2em; margin: .67em 0 }
+h2              { font-size: 1.5em; margin: .75em 0 }
+h3              { font-size: 1.17em; margin: .83em 0 }
+h4, p,
+blockquote, ul,
+fieldset, form,
+ol, dl, dir,
+menu            { margin: 1em 0 }
+h5              { font-size: .83em; margin: 1.5em 0 }
+h6              { font-size: .75em; margin: 1.67em 0 }
+h1, h2, h3, h4,
+h5, h6, b,
+strong          { font-weight: bolder }
+blockquote      { margin-left: 40px; margin-right: 40px }
+i, cite, em,
+var, address    { font-style: italic }
+pre, tt, code,
+kbd, samp       { font-family: monospace }
+pre             { white-space: pre }
+button, textarea,
+input, select   { display: inline; }
+big             { font-size: 1.17em }
+small, sub, sup { font-size: .83em }
+sub             { vertical-align: sub }
+sup             { vertical-align: super }
+table           { border-spacing: 2px; }
+thead, tbody,
+tfoot           { vertical-align: middle }
+td, th, tr      { vertical-align: inherit }
+s, strike, del  { text-decoration: line-through }
+hr              { border: 1px inset }
+ol, ul, dir,
+menu, dd        { margin-left: 0px }
+ol              { list-style-type: decimal }
+ol ul, ul ol,
+ul ul, ol ol    { margin-top: 0; margin-bottom: 0 }
+u, ins          { text-decoration: underline }
+br:before       { content: "\A"; white-space: pre-line }
+center          { text-align: center }
+:link, :visited { text-decoration: none }
+:focus          { outline: none }
+
+a, a img, a:hover, a:active, a:focus{
+	outline:0; 
+	outline:none;
+	border:none;}
+
+/* Begin bidirectionality settings (do not change) */
+BDO[DIR="ltr"]  { direction: ltr; unicode-bidi: bidi-override }
+BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override }
+
+*[DIR="ltr"]    { direction: ltr; unicode-bidi: embed }
+*[DIR="rtl"]    { direction: rtl; unicode-bidi: embed }
+
+@media print {
+  h1            { page-break-before: always }
+  h1, h2, h3,
+  h4, h5, h6    { page-break-after: avoid }
+  ul, ol, dl    { page-break-before: avoid }
+}
+
+
+
+/*===============FORMS===================*/
+
+label{
+	display:inline;}
+
+/* Form validation */
+input.invalid,
+textarea.invalid{ 
+	border: 1px solid #ff0000 !important;
+	}
+	
+label.invalid { color: #ff0000 !important; }
+
+
+form.form-validate dl dt{
+	float:left;
+	width:12em;
+	}
+
+form.form-validate dl dd{
+	display: block;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+	
+form.form-validate legend{
+	padding:0 1em;
+	font-weight:bold;
+	}
+	
+.checkbox{
+position:relative;
+top:2px;
+margin:0 2px;
+} 
+	#logo{position:absolute; }
+/*=================Lists==================*/
+	
+ul li{
+	list-style:none;}
+
+/* Caption fixes */
+.img_caption .left {
+        float: left;
+        margin-right: 1em;
+}
+
+.img_caption .right {
+        float: right;
+        margin-left: 1em;
+}
+
+.img_caption .left p {
+        clear: left;
+        text-align: center;
+}
+
+.img_caption .right p {
+        clear: right;
+        text-align: center;
+}
+
+.img_caption  {
+	text-align: center!important;
+}
+
+.img_caption.none {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+/* Calendar */
+a img.calendar {
+	width: 16px;
+	height: 16px;
+	margin-left: 3px;
+	background: url(../images/calendar.png) no-repeat;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+
+/*==========MAIN LAYOUT==========*/
+
+#left-col,
+#right-col,
+#content{
+	float:left;
+	}
+
+	
+/* Tooltips */
+.tip {
+   background-color: #fff;
+   border: 1px #ccc solid;
+   padding: 5px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   position:relative;
+   z-index:50;
+}
+
+.tip-title {
+	font-weight: bold;
+}
+	
+	
+/*===========BLOG LAYOUT=========*/
+
+.items-row .item{
+	float:left;}
+	
+.items-row.cols-1 .item{
+	width:100%;
+}
+
+.items-row.cols-2 .item{
+	width:50%;
+}
+
+.items-row.cols-3 .item{
+	width:33%;
+}
+
+.items-row.cols-4 .item{
+	width:25%;
+}
+
+.items-row.cols-5 .item{
+	width:20%;
+}
+
+.items-row.cols-6 .item{
+	width:16%;
+}
+
+.item-content, .item .system-unpublished{
+	padding:0 1em;}
+	
+	
+span.row-separator{
+	clear:both;
+	visibility:none;
+	height:0px;
+	line-height:0px;
+	display:block;
+	}
+	
+/*============ARTICLES DETAILS=======*/
+
+dl.article-info{
+	font-style:italic;
+	}
+dl.article-info dt.article-info-term{
+	display:none;}
+
+dl.article-info dd{
+	margin-left:1em;}
+	
+.item-page{
+	position:relative;
+	}
+	
+ul.actions{
+	position:absolute;
+	right:0;
+	top:0;}
+	
+.blog .items-leading > div,
+.blog .items-row .item,
+.blog-featured .items-leading,
+.blog-featured .items-row .item
+{
+	position:relative;}
+	
+
+	
+/*===Articles Archive===*/
+
+.archive .filter-search select#month{
+	width:5em;}
+.archive .filter-search select#year{
+	width:5em;}
+.archive .filter-search select#limit{
+	width:3em;}
+	
+/*===Category List===*/
+
+table.category{
+	width:100%;}
+
+table.category th.list-title{
+	width:60%;
+	}
+	
+table.category th.list-author{
+	width:30%;
+	}
+
+table.category th.list-hits{
+	width:10%;
+	}
+	
+td.list-author,
+td.list-hits{
+	text-align:center;}
+	
+/*===========ACTION ICONS============*/
+
+ul.actions{
+float:right;
+margin-left:0;
+padding-right:1em;
+}
+
+ul.actions li{
+display:inline;}
+
+ul.actions li img{
+	float:none;}
+	
+	
+/*===========Articles Edit============*/
+
+#editor-xtd-buttons {
+    padding-top: 10px;
+}
+
+.button2-left, .button2-left div {
+    float: left;
+}
+.button2-left a, .button2-left button, .button2-left span{
+    color: #333333;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 1em;
+    height: 22px;
+    line-height: 22px;
+	text-decoration:none;
+}
+
+.button2-left .page a, .button2-right .page a, .button2-left .page span, .button2-right .page span, .button2-left .blank a, .button2-right .blank a, .button2-left .blank span, .button2-right .blank span, .button2-left .blank button, .button2-right .blank button {
+    padding: 0 6px;
+}
+
+.button2-left a:hover, .button2-left button:hover, .button2-left button:hover {
+    color: #0B55C4;
+    text-decoration: none;
+}
+.button2-left a, .button2-left span, .button2-left button {
+    padding: 0 24px 0 6px;
+}
+
+.button2-left {
+    background: url("../images/j_button2_left.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    margin-right: 10px;
+}
+
+.button2-left .image {
+    background: url("../images/j_button2_image.png") no-repeat scroll 100% 0 transparent;
+}
+.button2-left .readmore {
+    background: url("../images/j_button2_readmore.png") no-repeat scroll 100% 0 transparent;
+}
+.button2-left .pagebreak {
+    background: url("../images/j_button2_pagebreak.png") no-repeat scroll 100% 0 transparent;
+}
+.button2-left .blank {
+    background: url("../images/j_button2_blank.png") no-repeat scroll 100% 0 transparent;
+}
+.button2-left .article {
+    background: url("../images/system/j_button2_readmore.png") no-repeat scroll 100% 0 transparent;
+}
+
+.edit fieldset{
+	border:1px solid #ccc;
+	padding:0 2em 2em 2em;}
+	
+.edit fieldset legend{
+	font-weight:bold;
+	padding:0 1em;
+	margin-left:1em;}
+
+.edit label
+{
+	width:10em;
+	display:block;
+	float:left;
+	}
+
+.edit .formelm{
+	margin:1em 0;
+	overflow:hidden;
+	clear:both;}
+	
+.edit  select{
+	width:183px;
+	}
+#jform_publish_up_img,
+#jform_publish_down_img{
+	left: 5px;
+    position: relative;
+    top: 4px;
+}
+
+.edit fieldset{
+	position:relative;}
+
+.edit .formelm-area{
+	margin-top:1em;}
+	
+.edit .formelm-buttons{
+	 position: absolute;
+    right: 3em;
+    top: 0.7em;
+}
+
+label#jform_description-lbl{
+	float:none;}
+
+
+
+/*========COMPONENT PAGES==========*/
+
+	/*====COM_USER===*/
+
+	/*===Login page===*/
+
+div.login ul{
+	margin-left:0;
+	}
+
+div.login ul li{
+	list-style:none;
+	}
+	
+div.login-fields{
+	    margin: 0.5em 0;}
+	
+div.login-fields label{
+	display: block;
+    width: 10em;
+	float:left;
+	}
+	
+div.login-fields input{
+	width:15em;}
+	
+p#form-login-remember input#modlgn-remember{
+	display:inline;
+	width:20px;
+	position:relative;
+	top:2px;}
+	
+	/*===Logout page===*/
+	
+	/*===Reset password page===*/
+
+	/*===Reset username page===*/
+	
+	/*===Registration page====*/
+	
+#member-registration fieldset dl dt.first{
+	float:none;}
+	
+	/*===Profile page====*/
+	
+div.profile fieldset#users-profile-core, 
+div.profile fieldset#users-profile-custom{
+	border:1px solid #CCC;
+	padding:1em;
+	}
+	
+div.profile fieldset legend{
+	padding:0 0.5em;}
+	
+div.profile fieldset dl{
+	overflow:hidden;}
+	
+div.profile fieldset dt{
+	display:block;
+	width:10em;
+	float:left;}
+	
+	/*===Profile Edit page===*/
+	
+form#member-profile fieldset{
+	border:1px solid #ccc;
+	margin-bottom:1em;
+	padding:1em;
+	}
+	
+	/*===Single Contact page====*/
+	
+/*slider*/
+
+#contact-slider .panel h3.pane-toggler{
+	background:url(../images/slider_plus.png) top right no-repeat;
+	}
+	
+#contact-slider .panel h3.pane-toggler-down{
+	background:url(../images/slider_minus.png) top right no-repeat;
+}
+
+input#jform_contact_email_copy{
+	position:relative;
+	top:2px;}
+	
+.contact span.jicons-icons{
+	float:left;
+	width:30px;
+	}
+	
+.contact #contact-address{
+	float:right;
+	width:40%;}
+	
+.contact .contact-form{
+	float:left;
+	width:60%;}
+	
+	/*===Featured Contacts page====*/
+	
+table.category td.item-num,
+table.category td.item-position,
+table.category td.item-phone,
+table.category td.item-suburb,
+table.category td.item-state,
+table.category td.item-state{
+	text-align:center;
+	}
+	
+
+/*=========Search Results Page=========*/
+
+form#searchForm fieldset{
+border:1px solid #ccc;
+padding:1em;
+}
+
+form#searchForm .ordering-box{
+margin-top:0.5em;}
+
+.phrases-box input,
+#searchForm .only input{
+	position:relative;
+	top:2px;}
+	
+.phrases-box label,
+#searchForm .only label{
+	padding-right:1em;}
+	
+.ordering-box select{
+	width:9em;}
+
+.search-results .result-title{
+	font-weight:bold;
+	margin-bottom:0.5em;
+	}
+
+.search-results .result-category,
+.search-results .result-created{
+	font-style:italic;
+	}
+	
+.search-results .result-created{
+	margin-bottom:2em;
+	}
+	
+.search-results .result-text{
+	margin:0.5em 0;}
+	
+.search-results 
+
+.search-results 
+.search-results 
+.search-results 
+
+
+/*=========Footer Page navigation=======*/
+
+ul.pagenav{
+	overflow:hidden;
+	margin-left:0;}
+
+ul.pagenav li{
+	list-style:none;}
+	
+ul.pagenav li.pagenav-prev{
+	float:left;}
+ul.pagenav li.pagenav-next{
+	float:right;
+}
+
+div.pagination{
+	overflow:hidden;}
+	
+p.counter{
+	text-align:center;}
+	
+div.pagination ul{
+	overflow:hidden;
+	text-align:center;
+	}
+	
+div.pagination ul li{
+	float:none;
+	display:inline;
+	padding:0 0.5em;
+	list-style:none;
+	}
+
+
+
+
+/*=========System Messages=========*/
+
+.error{
+	padding:0px;
+	}
+
+.error h2{
+    color:#000 !important;
+	font-size:1.4em !important;
+	text-transform:uppercase;
+	padding:0 0 0 0px !important
+}
+
+#system-message{
+	margin:1em 0;
+	border-left:0;
+	border-right:0;
+}
+
+#system-message dt{ 
+	font-weight: bold; 
+}
+#system-message dd{ 
+	margin: 0 0 1em 0;
+	font-weight: bold;
+	text-indent: 0px;
+	padding:0
+}
+#system-message dd ul{ 
+	color: #000; 
+	list-style: none; 
+	padding: 0px;
+}
+#system-message dd ul li{
+	line-height:1.5em 
+}
+
+/* System Standard Messages */
+#system-message dt.message { 
+	position:absolute;
+	top:-2000px;
+	left:-3000px;
+}
+	
+#system-message dd.message  ul{
+	background: #fff  url(../images/notice-info.png) no-repeat;
+	padding-left:2em;
+	padding: 1em 1em 1em 2em;
+	border-top: 2px solid #90B203;
+	border-bottom: 2px solid #90B203;
+}
+
+#system-message dd.message ul li{background:none !important}
+
+/* System Error Messages */
+#system-message dt.error { 
+	position:absolute;
+	top:-2000px;
+	left:-3000px;
+}
+	
+#system-message dd.error ul
+{
+	background:#fff url(../images/notice-alert.png) no-repeat ;
+	padding-left:2em;
+	padding: 1em 1em 1em 2em;
+    border-top: 2px solid #990000;
+    border-bottom: 2px solid #990000;
+}
+
+
+
+/* System Notice Messages */
+#system-message dt.notice { 
+	position:absolute;
+	top:-2000px;
+	left:-3000px;
+}
+	
+#system-message dd.notice  ul
+{ 
+		background:#fff url(../images/notice-note.png) no-repeat ;
+	padding-left:2em;
+	padding: 1em 1em 1em 2em;
+	    border-top: 2px solid #FAA528;
+	    border-bottom: 2px solid #FAA528; 
+}
+#system-message dd.notice ul { color: #000;margin:10px 0 }
+
+#system-message {
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+#system-message dt {
+    font-weight: bold;
+}
+
+#system-message dd {
+    font-weight: bold;
+    padding: 0;
+}
+
+
+

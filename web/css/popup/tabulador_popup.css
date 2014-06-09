@@ -1,0 +1,79 @@
+* { margin: 0; padding: 0; }
+#page-wrap { width: 1200px; margin: 10px auto; }
+h1 { font: 36px Georgia, Serif; margin: 20px 0; }
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+p { margin: 10px 0 10px 0; }
+
+.tabs { list-style: none; }
+.tabs li { display: inline; }
+.tabs li a { color: black; float: left; display: block; padding: 4px 10px; margin-left: -1px; position: relative; left: 1px; background: white; text-decoration: none; }
+.tabs li a:hover { background: #ccc; }
+
+
+/* Stuff for example seven - including conditionals below */
+
+#ie-test { position: relative; width: 100%; }
+#boxLinks { list-style: none; overflow: hidden; }
+#boxLinks li { display: inline; }
+#boxLinks li a { background: #e99f00;   padding: 5px 10px; color: #fff; text-decoration: none; border: 1px solid #ccc; float: left; display: block; margin-left: -1px; position: relative; left: 1px; }
+#boxLinks li a:hover { color: #fff; background: #c38b13; }
+#boxLinks li a:link { color: #fff; background: #c38b13 !important; }
+#box { height: 650px;background: #fff; border-radius: 0 10px 10px 10px; border: 1px solid #ccc; overflow: hidden; padding: 0px 30px 0px 30px; margin:-1px; position: relative; }
+.box { display: none; height: 610px; width: 1082px; padding:22px 0px; overflow: auto; display: block; position: relative; overflow-x: hidden; }
+#box1:target, #box2:target, #box3:target { display: block; }
+#boxLinks .border_ini a{border-radius: 10px 0 0 0;}
+#boxLinks .border_fin a{border-radius: 0 10px 0 0;}
+
+@media screen and (max-width:1333px){
+
+	input, select{
+		width:160px !important;
+		position:relative;
+	}
+}
+
+@media screen and (max-width:1223px){
+		input, select{
+			width:120px !important;
+			position:relative;
+		}
+		.inputs_buscador_general{width: 440px;}
+	}
+@media screen and(max-width: 1280px){
+	#page-wrap { width: 1130px; margin: -10px -30px; }
+	#box{height: 550px !important;}
+	#tablaLocalidades {margin:10px 100px !important;}
+	#tablaLocalidad {display: block; margin-left: -100px;}
+	.box2,.box3,.box4,.box5{ padding: 35px 20px; width: 1000px !important; text-transform:initial;}
+}
+@media screen and(max-width: 1024px){
+	#page-wrap { width: 830px; margin: -10px -30px; }
+	#box{height: 550px !important;}
+	#tablaLocalidades {margin:10px 100px !important;}
+	#tablaLocalidad {display: block; margin-left: -100px;}
+	.box2,.box3,.box4,.box5{ padding: 35px 20px; width: 900px !important; text-transform:initial;}
+}
+
+@media screen and(max-height: 600px){
+	#page-wrap { width: 930px; margin: -10px -50px; }
+	#box{height: 400px !important;}
+	#tablaLocalidades {margin:10px 300px !important;}
+	#tablaLocalidad {display: block; margin-left: -300px;}
+	.box2,.box3,.box4,.box5{ padding: 35px 20px; width: 780px !important; text-transform:initial;}
+}
+
+@media screen and(max-height: 800px){
+	#tablaLocalidades {margin:10px 400px !important;}
+	#tablaLocalidad {display: block; margin-left: -400px;}
+	.box2,.box3,.box4,.box5{ padding: 35px 20px; width: 1000px !important; text-transform:initial;}
+}
+
+.prestyle{
+white-space: -moz-pre-line; /* Mozilla, supported since 1999 */
+    white-space: -pre-line; /* Opera */
+    white-space: -o-pre-line; /* Opera */
+    white-space: pre-line; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+
+  font: 100% 'Lucida Sans Unicode','Lucida Grande',arial,helvetica,sans-serif;
+}

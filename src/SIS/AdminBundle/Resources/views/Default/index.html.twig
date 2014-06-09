@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es">
+
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="index, follow" />
+	<title></title>
+	<link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+		<!--[if lt IE 7]>
+		  <div style=' clear: both; text-align:center; '>
+		    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+		      <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+		   </a>
+		 </div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<style>
+			#caption{filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d41f1f24,endColorstr=#d41f1f24);}
+			</style>
+		<![endif]-->
+		<!--[if IE]>
+			<style>
+			.fusion-submenu-wrapper.level2{top:23px !important;}
+			</style>
+		<![endif]-->
+		<!-- PNG FIX for IE6 -->
+		<!-- http://24ways.org/2007/supersleight-transparent-png-in-ie6 -->
+		<!--[if lte IE 6]>
+		<script type="text/javascript" src="js/pngfix/supersleight-min.js"></script>
+		<![endif]-->
+
+		<!--[if IE]>
+		<style type="text/css">
+		    .box { display: block; }
+		    #box { overflow: hidden; }
+		    b { position: absolute; top: 0px; right: 0px; width:1px; height: 251px; overflow: hidden; text-indent: -9999px; }
+		</style>
+		<![endif]-->
+			<link rel="stylesheet" href="{{ asset('css/modal.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/k2.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/grid-12.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/gantry.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/joomla.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/style1.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/sizes.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/template.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/tooltips.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/prettyPhoto.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/framework-reset.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/font.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/fusionmenu.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/clasificador/menu.css') }}" />			
+			<link rel="stylesheet" href="{{ asset('css/clasificador/tablas.css') }}" />			
+  			<link rel="stylesheet" href="{{ asset('css/panel/slide.css') }}" type="text/css" media="screen" />
+
+  			<link rel="stylesheet" type="text/css" href="{{ asset('css/popup/popup_productos.css') }}">
+			<link rel="stylesheet" type="text/css" href="{{ asset('css/popup/tabulador_popup.css') }}">
+	
+
+			 
+		    <!-- jQuery - the core -->
+			<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+			<script src="{{ asset('js/panel/slide.js') }}" type="text/javascript"></script>
+
+			<script type="text/javascript" src="{{ asset('js/popup/jquery.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/popup/jquery.scrollTo-min.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/popup/jquery.nyroModal.custom.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/popup/efecto_popup_index.js') }}"></script>
+
+			<script type="text/javascript" src="{{ asset('js/fade/fade.js') }}"></script>
+	
+			<!-- Sliding menú -->
+			<style type="text/css">
+			body a {color:#767676;}#rt-header .rt-container {background:transparent;}#rt-bottom .rt-container {background:transparent;}#rt-footer .rt-container, #rt-copyright .rt-container, #rt-menu .rt-container {background:transparent;}
+			</style>
+			<script src="{{ asset('js/mootools-core.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/core.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/mootools-more.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/modal.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/jquery-1.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/k2.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/jquery_002.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/gantry-totop.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/tooltips.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/jquery_003.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/jquery.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/scripts.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/fusion.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('js/bgStretch.js') }}" type="text/javascript"></script>
+			<script type="text/javascript">
+					window.addEvent('domready', function() {
+
+						SqueezeBox.initialize({});
+						SqueezeBox.assign($$('a.modal'), {
+							parse: 'rel'
+						});
+					});
+			var K2SitePath = '/joomla_39090/';
+
+			window.addEvent('domready', function() {
+							new Fusion('ul.menutop', {
+								pill: 0,
+								effect: 'slide and fade',
+								opacity:  1,
+								hideDelay:  500,
+								centered:  0,
+								tweakInitial: {'x': 0, 'y': 0},
+								tweakSubsequent: {'x':  1, 'y':  -25},
+								tweakSizes: {'width': 0, 'height': 0},
+								menuFx: {duration:  300, transition: Fx.Transitions.Circ.easeOut},
+								pillFx: {duration:  400, transition: Fx.Transitions.Back.easeOut}
+							});
+						
+			});
+			window.addEvent('load', function() {
+			});
+			</script>
+			<script type="text/javascript">
+				$.noConflict();
+			</script>
+		<!-- Sliding menú -->	
+
+		<!--DatePicker-->
+			<link rel="stylesheet" type="text/css" href="{{ asset('css/smoothness/jquery-ui-1.9.2.custom.css') }}" />
+			<script type="text/javascript" src="{{ asset('js/jquery-1.7.2.min.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/jquery.ui.core.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/jquery.ui.widget.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/jquery.ui.datepicker.js') }}"></script>
+			<script type="text/javascript">
+			$(function() {
+		    $('.date-picker').datepicker( {
+		        changeMonth: true,
+		        changeYear: true,
+		        showButtonPanel: false,
+				showOn: "button",
+				dayNames: ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"],
+				dayNamesMin: ["Do","Lu","Ma","Mi","Ju","Vi","Sa"],
+				monthNames: ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Nomviembre","Diciembre"],
+				monthNamesShort: ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"],
+				yearRange: "1400:2020",
+				maxDate: new Date(),
+		        dateFormat: 'yy-MM-dd',
+		        onClose: function(dateText, inst) { 
+
+					}
+				});
+			});
+			</script>
+		<!--DatePicker-->
+
+		<!--Templates-->
+		<script type="text/javascript" src="{{ asset('js/jquery.tmpl.js') }}"></script>
+
+		<script id="listTmpl" type="text/x-jquery-tmpl">
+
+		<div class="anuncios_pp anuncio_izq" id="ficha${sismoId}">
+		<div class="view view-fifth">
+			<h2><strong>${anio}/${mes}/${dia}</strong></h2>
+			</br>
+			<div class="datos">
+			<p><b>Nombre de Sismo:</b> ${sismo}</p>
+			<p><b>Zona Macrosismica:</b> ${zona}</p>
+			<p><b>Intensidad Máxima:</b> ${intensidad}</p>
+			<p><b>No de Localidades:</b> ${localidades}</p>
+			<p><b>Magnitud:</b> ${magnitud}</p>
+		</div>
+		</div>
+			<div class="botones_anuncio">
+				<a href="{{ path('index') }}descarga/${sismoId}" class="info"><img class="img_download_anuncio" src="{{ asset('img/download.png')}}" title="Descargar formato KML"/></a>
+				<a href="{{ path('index') }}descargaExcel/${sismoId}" class="info"><img class="img_download_excel" src="{{ asset('img/downloadExcel.png')}}" title="Descargar formato XLS"/></a>
+				<a href="#dialog" name="modal" class="masdetalles_anuncio" value="${sismoId}">Más Detalles</a>
+			</div>
+		</div>
+		</li>
+
+		</script>
+
+		<script id="tablaTmpl" type="text/x-jquery-tmpl">
+		<tr>
+		<td>${anio}/${mes}/${dia}</td>
+		<td>${sismo}</td>
+		<td>${zona}</td>
+		<td>${intensidad}</td>
+		<td>${localidades}</td>
+		<td>${magnitud}</td>
+		<td>
+			<a href="#dialog" name="modal" value="${sismoId}"><img class="img_download_anuncio_tablas" src="{{ asset('img/show_ico.png')}}"  title="Más Detalles"/></a>
+			<a href="{{ path('index') }}descarga/${sismoId}" class="info"><img class="img_download_anuncio_tablas" src="{{ asset('img/download.png')}}" title="Descargar Archivo KML"/></a>
+			<a href="{{ path('index') }}descargaExcel/${sismoId}"  class="info"><img class="img_download_anuncio_tablas" src="{{ asset('img/downloadExcel.png')}}" title="Descargar Archivo XML"/></a>
+		</td>
+		</tr>
+		</script>
+
+		<!--Templates-->
+
+		<!--Mapas-->
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCHDrOde0cwPP7omzUeDgeFDJnthuKT9uA&sensor=true"></script>
+
+		<!--Mapas-->
+
+</head>
+
+
+<body class="cssstyle-style1 font-family-helvetica font-size-is-default menu-type-fusionmenu col12" id="home">
+
+<div class="wrapper homepage">
+			<div id="rt-iewarn">
+				<div class="rt-container">
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div id="header">
+				<img src="{{ asset('img/logo_small2.png')}}" alt="Catalogo de Sismos en México">
+				<a id="cambiar_vista_tablas" title="Cambiar a vista de tablas" href="#" onclick="cambioVista();"><span></span></a>
+				<!--<a id="cambiar_vista_fichas" href=""><span></span></a>-->
+			</div>
+			<div>
+								
+				<!-- Panel -->
+					<div id="toppanel">
+						<div id="panel">
+						
+							<div  class="contenedorBusquedaAvanzada">
+								<div class="divContenedorIzquierda">
+									Búsqueda Detallada de Sismos
+									<ul class="inputs_buscador_general">
+										<li><label for="fecha">Fecha Exacta:</label><br/>
+									   		<input placeholder="Año-Mes-Día" name="fecha" id="fecha" class="date-picker"/>
+										</li>
+										<li>
+										<label for="anioini">Año inicial:</label><br/>
+											<input name="anioini" id="anioini"/>
+										</li>
+										<li>
+										<label for="aniofin">Año final:</label><br/>
+											<input name="aniofin" id="aniofin"/>
+										</li>
+										<li>
+										<label for="zonaMacro">Zona Macrosísmica :</label><br/>
+									    <select id="zonaMacro">
+											<option value="">Selecciona una zona</option>
+											<option value="0"></option>
+										</select>
+										</li>
+										<li>
+										<label for="estado">Estado :</label><br/>
+									    <select id="estado">
+											<option value="">Selecciona un estado</option>
+											<option value="0"></option>
+										</select>
+										</li>
+										<li>
+										<label for="localidad">Localidad :</label><br/>
+									    <select id="localidad">
+											<option value="">Selecciona una localidad</option>
+											<option value="0"></option>
+										</select>
+										</li>
+									</ul>
+								</div>
+								<div class="divContenedorDerecha">
+									Búsqueda con Cordenadas Rectangulares
+									<ul>
+										<li>
+											<label for="latini">Latitud(n) :</label><br>
+									  		<input name="latini" id="latini" />
+										</li>
+										<li>
+											<label for="lonini">Longitud(w) :</label><br>
+									   		<input name="lonini" id="lonini" />
+									    </li>
+									    <br>
+										<li>
+											<label for="latfin">Latitud(n) :</label><br>
+									   		<input name="latfin" id="latfin" />
+									    </li>
+									    <li>
+											<label for="lonfin">Longitud(w) :</label><br>
+									  		<input name="lonfin" id="lonfin" />
+									    </li>
+								</div>
+								<div class="divContenedorTexto">
+									Búsqueda especifica
+									<ul>
+										<li>
+											<label for="texto">Palabra relacionada con un sismo:</label><br>
+									  		<input name="texto" id="texto" />
+										</li>
+									    <br>
+										<li>
+											<input type="submit" value="buscar" id="search_but_text" class="bt_text"/>
+									    </li>
+								</div>
+								<div  class="divContenedorCentro">
+									<input type="submit" value="catalogo" id="cat_but" class="bt_register"/>
+									<input type="submit" value="buscar" id="search_but" class="bt_register"/>
+								</div>
+
+								<div id="contenido"></div>
+							</div>		
+								
+							
+						
+					</div> <!-- /login -->	
+
+					<!-- The tab on top -->	
+					<div class="tab">
+						<ul class="login">
+							<li class="left">&nbsp;</li>
+							<li id="toggle">
+								<a id="open" class="open" href="#" style="width:120px;">Busqueda Avanzada</a>
+								<a id="close" class="close" href="#" style="display: none; width:100px;">Cerrar Panel</a>			
+							</li>
+							<li class="right">&nbsp;</li>
+						</ul> 
+					</div> <!-- / top -->
+					
+				</div> <!--panel -->
+
+
+				<!-- Todos los resultados -->
+			
+	<div id="anuncios" style="overflow-y:auto; width:100%; height:88%;">
+
+		<div id="wrapper2">
+		  
+			<!-- this isn’t part of the plugin, just a control for demo -->
+
+			<div class="demo">
+				<!-- read the documentation to understand what’s going on here -->
+				<ul id="list" class="image-grid">
+
+				</ul>
+
+				<table id="tablas">
+					<tbody><thead id="tabla"></thead></tbody>
+				</table>
+				<div id="info">
+					<img style="position:absolute; right:300px; top:100px;" id="informacion" src="{{ asset('img/mensaje.png')}}">
+				</div>
+				<div id="loading">
+					<img style="position:fixed; left:50%; margin-left:10px; top:50%; margin-top:-60px;" id="loading" >
+				</div>
+
+			</div>
+		 <div class="espacio_menu"> </div>
+	</div>
+							</div>
+									
+				<!-- Todos los resultados -->
+								</div>
+								
+				
+<div id="boxes">
+
+	<div id="dialog" class="window">
+		<a href="#"class="close"/>X</a>
+		<div class="contenido">
+			
+			<div id="page-wrap">      
+            <div id="ie-test">
+                <ul id="boxLinks" class="group">
+					<li class="border_ini"><a href="#box7">Resumen</a></li>
+                	<li><a href="#box1">Lista de Localidades</a></li>
+                	<li><a href="#box2">Cita Representativa</a></li>
+                    <li><a href="#box3">Interpretación</a></li>
+                	<li><a href="#box4">Fenomenos Asociados</a></li>
+                	<li><a href="#box5">Cita Textual</a></li>
+                	<li class="border_fin"><a href="#box6">Mapa</a></li>
+
+                </ul>
+                
+                <div id="box">
+                	<div id="box1" class="box">
+						<table id="tablaLocalidades" style="margin:10px 10px;">
+							<tbody id="tablaLocalidad"></tbody>
+						</table>
+                     </div>
+                	<div id="box2" class="box"><p class="box2"></p> <!--[if IE]><b>.</b><![endif]--></div>
+                    <div id="box3" class="box"><p class="box3"></p> <!--[if IE]><b>.</b><![endif]--></div>
+                	<div id="box4" class="box"><p class="box4"></p> <!--[if IE]><b>.</b><![endif]--></div>
+                	<div id="box5" class="box"><p class="box5"></p> <!--[if IE]><b>.</b><![endif]--></div>
+                	<div id="box6" class="box"><p class="box6"></p> <!--[if IE]><b>.</b><![endif]--></div>
+					<div id="box7" class="box"><p class="box7"></p> <!--[if IE]><b>.</b><![endif]--></div>
+                </div>
+            </div>
+    	</div>
+
+			</p>
+		</div>
+	</div>
+
+	<div id="mask"></div>
+</div>
+				<div class="clear"></div>
+	
+
+		<div class="push"></div>
+		</div>
+		
+		<div class="footer  homepage">
+			<div style="height: 70px; opacity: 1;" id="rt-menu">
+				<div class="rt-container">
+					<div class="rt-fusionmenu">
+						<div class="nopill">
+							<div class="rt-menubar">
+								<ul class="menutop level1 ">
+									<li class="item101 parent root">
+										<a id="a-1352265857931917" class="orphan item bullet" href="index.html"><i class="animateHover"></i>
+											<span>Inicio</span>
+										</a>
+									</li>
+									<li class="item116 active root f-main-parent f-mainparent-item">
+										<a id="a-1352265857932318" class="daddy item bullet" href="sismos.html"><i style="left: 34px; top: -1px; width: 0px; height: 0px; opacity: 0;" class="animateHover"></i>
+											<span>Catalogo de Sismos</span>
+										</a>		
+									</li>
+									<li class="item118 parent root f-main-parent f-mainparent-item">
+										<a id="span-1352265857935134" class="daddy item bullet" href="agradecimiento.html"><i style="left: -99px; top: 70px; width: 0px; height: 0px; opacity: 0;" class="animateHover"></i>
+											<span>Equipo de Trabajo</span>
+										</a>		
+									</li>
+									<li class="item117 root">
+										<a id="a-1352265857936751" class="orphan item bullet" href="aportaciones.html"><i class="animateHover"></i>
+											<span>Aportaciones</span>
+										</a>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+
+    <script src="js/clasificacion/main.js" type="text/javascript"></script>    
+
+</div>
+
+<script type="text/javascript">
+var result = "";
+var menu = "";
+var jsonFile = "";
+
+		jQuery(document).ready(function($){
+
+			$('#tab_busqueda').click(function(event){
+				event.preventDefault(); //cancela el comportamiento por defecto
+				hideSearchDivs();
+				$("#search_advanced_div").show();
+			});
+			$('#tab_login').click(function(event){
+				event.preventDefault(); //cancela el comportamiento por defecto
+				hideSearchDivs();
+				$("#contenido").show();
+				$('#contenido').load($(this).attr('href')); //carga por ajax del contenido del perfil
+			});
+			$("#search_advanced_div").show();
+
+			cargarZonaMacrosismica();
+			cargarLocalidad();
+			cargarEstado();
+		});
+
+$('.bt_register').click( function() {
+
+var fechaDT = $( ".date-picker" ).datepicker( "getDate" );
+var fecha = (fechaDT == null || fechaDT == undefined) ? "" : fechaDT.getFullYear() + "-" + (fechaDT.getMonth() + 1) + "-" + fechaDT.getDate();
+var anioini = $("#anioini").val();
+var aniofin = $("#aniofin").val();
+var zonaMacro = $("#zonaMacro").val();
+var lonini = $("#lonini").val();
+var latini = $("#latini").val();
+var lonfin = $("#lonfin").val();
+var latfin = $("#latfin").val();
+var estado = $("#estado").val();
+var localidad = $("#localidad").val();
+
+if(this.value == 'catalogo'){
+fecha = "";
+anioini = "";
+aniofin = "";
+zonaMacro = "";
+lonini = "";
+latini = "";
+lonfin = "";
+latfin = "";
+estado = "";
+localidad = "";
+
+}else{
+	if(validaForm(fecha, anioini, aniofin, zonaMacro, lonini, latini, lonfin, latfin, estado, localidad) == -1){
+		return false;
+	}
+}
+
+
+$("div#panel").slideUp("slow");
+$("#toggle a").toggle();
+clearForm();
+$('#tablas').hide();
+$('#list').hide();
+$('#info').hide();
+$('#loading img').attr("src", "{{ asset('img/loading-image.gif')}}");
+$('#loading').show();
+
+$.ajax({
+    type: "GET",
+    data: { fecha_:fecha, anioini_:anioini, aniofin_:aniofin, zonaMacro_:zonaMacro, lonini_:lonini, latini_:latini, lonfin_:lonfin, latfin_:latfin, estado_:estado, localidad_:localidad},
+	dataType: 'json',
+    url:"{{ path('searchFecha') }}",
+    success: function(msg){
+        if (msg.list.length != 0){
+            //$("#tabla_result").html(msg);
+			//$("#resultado_div").show();
+
+			$('#list').empty();
+			$('#tabla').empty();
+			$('#tabla').append('<tr class="odd"><tr><th scope="col" abbr="Fecha">Fecha</th><th scope="col" abbr="Nombre">Nombre de Sismo</th><th scope="col" abbr="Zona">Zona Macrosísmica</th><th scope="col" abbr="Intensidad Max">Intensidad Máxima</th><th scope="col" abbr="Localidades">Número de Localidades</th><th scope="col" abbr="Magnitud">Magnitud</th><th>Opciones</th></tr>');
+
+			for(var i = 0; i < msg.list.length; i ++)
+			{
+				$('#listTmpl').tmpl(msg.list[i]).appendTo('#list');
+				$('#tablaTmpl').tmpl(msg.list[i]).appendTo('#tabla');
+				$('#cambiar_vista_tablas').attr('title','Cambiar a vista de tablas');
+				$('#loading').hide();
+				$('#tablas').hide();
+				$('#list').show();
+			}
+		}
+			else
+			{
+				$('#cambiar_vista_tablas').attr('title','Cambiar a vista de tablas');
+				$('#tablas').hide();
+				$('#list').hide();
+				$('#loading img').attr("src", "{{ asset('img/resultados.png')}}");
+				$('#loading').show();
+			}
+		}
+    });
+});
+
+function cambioVista(){
+	if($('#cambiar_vista_tablas').attr('title') == 'Cambiar a vista de tablas'){
+		$('#cambiar_vista_tablas').attr('title','Cambio a vista de fichas');
+		$("#cambiar_vista_tablas").css({background:"url({{ asset('img/boton_vista.png')}}) no-repeat 0px 0px / 20px" });
+		$('#list').hide();
+		$('#tablas').show();
+	}else{
+		$('#cambiar_vista_tablas').attr('title','Cambiar a vista de tablas');
+		$("#cambiar_vista_tablas").css({background:"url({{ asset('img/boton_vista.png')}}) no-repeat 0px -45px  / 20px" });
+		$('#tablas').hide();
+		$('#list').show();
+	}
+}
+
+function cargarZonaMacrosismica(){
+
+$.ajax({
+    type: "GET",
+    data: {data_:'data'},
+    url:"{{ path('cargaZona') }}",
+    success: function(msg){
+        if (msg != ''){
+            $("#zonaMacro").html(msg);
+		}
+			else
+			{
+				$('#zonaMacro').html('Items no disponibles');
+			}
+		}
+    });
+
+}
+
+function cargarLocalidad(){
+
+$.ajax({
+    type: "GET",
+    data: {data_:'data'},
+    url:"{{ path('cargaLocalidad') }}",
+    success: function(msg){
+        if (msg != ''){
+            $("#localidad").html(msg);
+		}
+			else
+			{
+				$('#localidad').html('Items no disponibles');
+			}
+		}
+    });
+
+}
+
+function cargarEstado(){
+
+$.ajax({
+    type: "GET",
+    data: {data_:'data'},
+    url:"{{ path('cargaEstado') }}",
+    success: function(msg){
+        if (msg != ''){
+            $("#estado").html(msg);
+		}
+			else
+			{
+				$('#estado').html('Items no disponibles');
+			}
+		}
+    });
+}
+
+function cargaDetalles(sismoId){
+
+var lat = 0;
+var lon = 0;
+var cont = 0;
+$('#tablaLocalidad').empty();
+$('.box2').empty();
+$('.box3').empty();
+$('.box4').empty();
+$('.box5').empty();
+$('#box6').empty();
+$('.box7').empty();
+
+$(".anuncios_pp").removeClass('seleccionado');
+$("#ficha" + sismoId).addClass('seleccionado');
+
+$.ajax({
+    type: "GET",
+    data: { sismoId_:sismoId},
+	dataType: 'json',
+    url:"{{ path('searchDetalle') }}",
+    success: function(msg){
+        if (msg != ''){
+
+		jsonFile = msg;
+			var cadena = '<thead><tr class="odd"><tr><th style="width:190px;" scope="col" abbr="Localidad">Localidad</th><th style="width:190px;" scope="col" abbr="Nombre">Nombre Oficial</tH><th style="width:190px;" scope="col" abbr="Latitud">Latitud</th><th style="width:190px;" scope="col" abbr="Longitud">Longitud</th><th style="width:190px;" scope="col" abbr="Intensidad">Intensidad</th><th style="width:190px;" scope="col" abbr="Comentario">Comentario</th></tr></thead>';
+			for(var i = 0; i < msg.localidades.length; i ++)
+			{
+				cadena = cadena + '<tr><td>' + msg.localidades[i].localidad + '</td><td>' + msg.localidades[i].nombreOficial + '</td><td>' + ( msg.localidades[i].latitud != null ? msg.localidades[i].latitud : '-' ) + '</td><td>' + (msg.localidades[i].longitud != null ? msg.localidades[i].longitud : '-' ) + '</td><td>' + (msg.localidades[i].intensidad != null ? msg.localidades[i].intensidad : '-' ) + '</td><td>' + (msg.localidades[i].comentario != null ? msg.localidades[i].comentario : '-' ) + '</td></tr>';
+				
+				if(msg.localidades[i].latitud != null && msg.localidades[i].longitud != null){
+					lat = lat + parseFloat(msg.localidades[i].latitud);
+					lon = lon + parseFloat(msg.localidades[i].longitud);
+					cont++;
+				}
+			}
+			lat = lat/cont;
+			lon = lon/cont;
+
+			cadena = cadena + '</tbody></table>';
+			$('#tablaLocalidad').append(cadena);
+			$('.box2').append('<PRE class="prestyle">' + msg.datos[0].citaRepresentativa + "</PRE>");
+			$('.box3').append('<PRE class="prestyle">' + msg.datos[0].interpretacion + "</PRE>");
+			$('.box4').append('<PRE class="prestyle">' + msg.datos[0].fenomenos + "</PRE>");
+			$('.box5').append('<PRE class="prestyle">' + msg.datos[0].citaTextual + "</PRE>");
+			$('.box7').append(
+				'<div class="texto_id_popup"><span>Número de Identificación: <strong>' + msg.datos[0].sismoId + '</strong></span><br></div>' +
+						      '<div class="texto_sismo_popup">Nombre de Sismo: <strong>' + msg.datos[0].sismo + '</strong></span><br></div>' +
+							  '<div class="texto_fecha_popup">Fecha del Sismo : <strong>' + msg.datos[0].anio + ' / ' + msg.datos[0].mes + ' / ' + msg.datos[0].dia + '</strong></span><br></div>' +
+							  '<div class="texto_zona_popup">Zona Macrosismica: <strong>' + msg.datos[0].zona + '</strong></span><br></div>' +
+							  '<div class="texto_magnitud_popup">Magnitud Estimada: <strong>' + msg.datos[0].magnitud + '</strong></span><br></div>' +
+							  '<div class="texto_intensidad_popup">Intensidad Máxima: <strong>' + msg.datos[0].intensidad + '</strong></span><br></div>' +
+							  '<div class="texto_localidades_popup">Número de Localidades: <strong>' + msg.datos[0].localidades + '</strong></span><br></div>'
+							   );
+			$(location).attr('href', '#box7');
+
+			var mapOptions = {
+				center: new google.maps.LatLng(23.725012,-102.216797),
+				zoom: 5,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("box6"),mapOptions);
+
+			for(var i = 0; i < jsonFile.localidades.length; i ++){
+				if(msg.localidades[i].latitud != 0 && msg.localidades[i].longitud != 0){
+					var color = "{{ asset('img/icons/1.png')}}";
+
+					switch (msg.localidades[i].intensidad){
+						case 1: color = "{{ asset('img/icons/1.png')}}"; break;
+						case 2: color = "{{ asset('img/icons/2.png')}}"; break;
+						case 3: color = "{{ asset('img/icons/3.png')}}"; break;
+						case 4: color = "{{ asset('img/icons/4.png')}}"; break;
+						case 5: color = "{{ asset('img/icons/5.png')}}"; break;
+						case 6: color = "{{ asset('img/icons/6.png')}}"; break;
+						case 7: color = "{{ asset('img/icons/7.png')}}"; break;
+						case 8: color = "{{ asset('img/icons/8.png')}}"; break;
+						case 9: color = "{{ asset('img/icons/9.png')}}"; break;
+						case 10: color = "{{ asset('img/icons/10.png')}}"; break;
+						case 11: color = "{{ asset('img/icons/11.png')}}"; break;
+						default: color = "{{ asset('img/icons/1.png')}}"; break;
+					}
+
+					var coordenadas = new google.maps.LatLng(msg.localidades[i].latitud, '-' + msg.localidades[i].longitud);
+					//Establecemos las coordenadas del punto
+					var marker = new google.maps.Marker({ //opciones
+						position: coordenadas,
+						//Decimos que la posición es la de la variable 'coordenadas'
+						map: map,
+						//Nombre del mapa
+						icon: color,
+						//color
+						title: msg.localidades[i].localidad + ' - ' + msg.localidades[i].nombreOficial + ' - ' + 'Intensidad Máxima: ' + (msg.localidades[i].intensidad != null ? msg.localidades[i].intensidad : '-' )
+						//Titulo (visible cuando colocamos el ratón sobre el punto)
+					});
+				}
+			}
+
+		}
+			else
+			{
+
+			}
+		}
+    });
+}
+
+function hideSearchDivs(){
+	$("#search_advanced_div").hide();
+	$("#contenido").hide();
+	$("#resultado_div").hide();
+}
+
+function clearForm(){
+	$('#fecha').val('');
+	$('#anioini').val('');
+	$('#aniofin').val('');
+	$('#zonaMacro').val('');
+	$('#estado').val('');
+	$('#localidad').val('');
+	$('#latini').val('');
+	$('#lonini').val('');
+	$('#latfin').val('');
+	$('#lonfin').val('');
+	$('#texto').val('');
+}
+
+function validaForm(fecha, anioini, aniofin, zonaMacro, lonini, latini, lonfin, latfin, estado, localidad){
+
+	if(fecha == '' && anioini == '' && aniofin == '' && zonaMacro == '' && lonini == '' && latini == '' && lonfin == '' && latfin == '' && estado == '' && localidad == ''){
+		alert('No hay campos seleccionados');
+		return -1;
+	}
+
+}
+
+
+
+$('.bt_text').click( function() {
+
+var texto = $("#texto").val();
+
+if(texto == ''){
+	return false;
+}
+
+$("div#panel").slideUp("slow");
+$("#toggle a").toggle();
+clearForm();
+$('#tablas').hide();
+$('#list').hide();
+$('#info').hide();
+$('#loading img').attr("src", "{{ asset('img/loading-image.gif')}}");
+$('#loading').show();
+
+
+$.ajax({
+    type: "GET",
+    data: { texto_:texto},
+	dataType: 'json',
+    url:"{{ path('searchTexto') }}",
+    success: function(msg){
+        if (msg.list.length != 0){
+
+			$('#list').empty();
+			$('#tabla').empty();
+			$('#tabla').append('<tr class="odd"><tr><th scope="col" abbr="Fecha">Fecha</th><th scope="col" abbr="Nombre">Nombre de Sismo</th><th scope="col" abbr="Zona">Zona Macrosísmica</th><th scope="col" abbr="Intensidad Max">Intensidad Máxima</th><th scope="col" abbr="Localidades">Número de Localidades</th><th scope="col" abbr="Magnitud">Magnitud</th><th>Opciones</th></tr>');
+
+			for(var i = 0; i < msg.list.length; i ++)
+			{
+				$('#listTmpl').tmpl(msg.list[i]).appendTo('#list');
+				$('#tablaTmpl').tmpl(msg.list[i]).appendTo('#tabla');
+				$('#cambiar_vista_tablas').attr('title','Cambiar a vista de tablas');
+				$('#loading').hide();
+				$('#tablas').hide();
+				$('#list').show();
+			}
+		}
+			else
+			{
+				$('#cambiar_vista_tablas').attr('title','Cambiar a vista de tablas');
+				$('#tablas').hide();
+				$('#list').hide();
+				$('#loading img').attr("src", "{{ asset('img/resultados.png')}}");
+				$("#loading img").css({ margin:"-50px -150px" });
+				$("#loading img").css({ left:"50%" });
+				$("#loading img").css({ position:"fixed" });
+				$('#loading').show();
+			}
+		}
+    });
+});
+
+</script>
+
+</body>
+</html>

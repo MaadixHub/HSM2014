@@ -1,0 +1,543 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body { margin-bottom: 0px; overflow-y:hidden;}
+ul, ol {padding-left: 0px;}
+ul li a {font-size: 1em; line-height:inherit;}
+ul li{list-style:none;}
+.component-content ul li, .component-content ol li {line-height:1.5em;}
+
+
+/*Members Login Popup*/
+#rt-popup,#rokbox-caption {display: none;}
+#rokbox-middle .rokbox-center{position:relative; height: 380px !important;}
+#rokbox-close {left: 195px; position: relative; top: 0; z-index: 10;}
+#rokbox-container {position: relative;top: 0px; z-index: 5;}
+#modlgn_username, #modlgn_passwd{width:205px;}
+#modlgn_remember{position:relative;	top:2px; left:10px;}
+
+#form-login p {margin-bottom: 15px;}
+div.k2LoginBlock fieldset.input p {margin: 0; padding: 0;}	
+
+
+
+/*----------------------------------Mainbody------------------------------------------*/
+
+div.itemIsFeatured, div.catItemIsFeatured, div.userItemIsFeatured { background: none;}
+
+/*Lists*/
+.even, .odd{background: none; border-bottom: none; padding: 0px;}
+
+div.catItemReadMore,div.userItemReadMore,div.genericItemReadMore{display:block;padding:18px 0 0;}
+div.catItemReadMore{padding:0;}
+/*---------------Category Listing-------------------*/
+
+div.catItemBody {margin: 0; padding: 0;}
+
+div.itemListCategory {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0px;
+}
+
+div.catItemView {padding: 0px;}
+
+div.catItemCategory,div.itemCategory {
+    border-bottom: none;font-size:13px;
+    padding: 0px 0 0 21px;
+	margin:0 18px 0 0;
+	float:left;
+}
+div.catItemCategory a,div.itemCategory a{color:#8b8d8e;}
+div.catItemCategory a:hover,div.itemCategory a:hover{color:#fff;}
+
+div.catItemCommentsLink,div.itemCommentsLink {
+    border-right: none;
+    display: inline-block;
+    margin: 0;
+	font-size:12px;
+	color:#3b3b3b;
+	line-height:11px;
+}
+div.catItemCommentsLink a,div.itemCommentsLink a{color:#58585a;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
+div.catItemCommentsLink a:hover,div.itemCommentsLink a:hover{color:#fff;}
+
+div.catItemHitsBlock,.itemHits {
+    border-bottom: none;
+    padding:12px 0 0px;
+	display:block;
+	float:none;font-size:14px;color:#848484;margin:0;
+}
+.itemHits strong{font-size:13px;color:#fff;}
+
+div.catItemCategory span {color:inherit;}
+
+.catItemAuthor,div.itemHeader span.itemAuthor{padding:0 13px 0 0;font-size:12px;display:inline-block;color:#3d3c3c;margin:0 9px 0 0;border-right:1px solid #3a3b3b;line-height:11px;}
+.catItemAuthor a,.itemAuthor a{color:#565858;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
+.catItemAuthor a:hover,.itemAuthor a:hover{color:#fff;}
+
+div.catItemIntroText {
+    font-size: inherit;
+    font-weight: normal;
+    line-height: inherit;
+    padding: 0px;
+	margin: 0 1em 0 0;
+}
+
+div.catItemIntroText>img,div.itemIntroText>img,div.userItemIntroText>img{padding:5px;background:rgba(255,255,255,.10);float:left;margin:0 0 15px 25px;}
+div.catItemIntroText>img:first-child,div.itemIntroText>img:first-child,div.userItemIntroText>img:first-child{margin:0 0 15px;}
+
+div.catItemTagsBlock {
+    border-bottom: none;
+    padding: 0px;
+}
+
+div.catItemAttachmentsBlock{padding:0;border:none;}
+
+div.catItemLinks,div.itemLinks {margin:35px 0 0; padding: 0;}
+
+#blog div.catItemLinks{overflow:hidden;margin:0 0 33px;line-height:11px;}
+
+span.catItemDateCreated,div.itemHeader span.itemDateCreated,div.userItemHeader span.userItemDateCreated,div.genericItemHeader span.genericItemDateCreated {
+    color:#575758;
+    font-size: 12px;
+	padding:0 9px 0 0;
+	margin:0 13px 0 0;
+	border-right:1px solid #3a3b3b;
+	line-height:11px;
+}
+
+
+
+/*---Category listing images---*/
+
+span.catItemImage img {padding: 0px;border:none;}
+div.catItemImageBlock {margin: 0 0 15px 0; padding: 0px;}
+#blog div.catItemImageBlock {margin: 0 20px 0 0;float:left;}
+span.catItemImage,span.userItemImage,span.genericItemImage {display: block; margin: 0; text-align: left;}
+span.catItemImage a,span.userItemImage a,span.genericItemImage a{display:inline-block;}
+#port span.catItemImage{display:inline-block;}
+#port span.catItemImage a.modal{background:#000;padding:0;}
+
+#k2Container{padding:0;margin:0;}
+
+/*---------------------------Generic View (Archives, Search)----------------------------*/
+
+div.genericItemView {border-bottom: none; margin: 0 0 3em; padding: 0;}
+div.genericItemBody {margin: 0; padding: 0;}
+div.genericItemImageBlock{float:none;margin:0 0 25px;}
+div.genericItemIntroText {font-size: inherit;  font-weight: inherit; line-height: inherit; padding: 0; overflow: hidden;}
+span.genericItemImage img {border:none;border-radius:12px; padding: 0px; margin:0;}
+
+/*--------------------------------------Author Page-------------------------------------*/
+div.userItemBody {margin: 0; padding: 0;}
+div.userItemImageBlock{float:left;margin:0 20px 0 0;}
+span.userItemImage img {border:none; padding: 0px; margin:0;}
+div.userItemIntroText {font-size: inherit;  font-weight: inherit; line-height: inherit; padding: 0; overflow: hidden;}
+div.userItemView{border-bottom: none; margin: 0 0 3em; padding: 0;}
+
+/*------------------------------------------Item View---------------------------------*/
+
+div.itemToolbar {
+    background: none;
+    border-bottom: none;
+    border-top: none;
+    margin: 16px 0 0;
+    padding: 0;
+}
+
+div.itemToolbar ul li a#fontDecrease:hover,
+div.itemToolbar ul li a#fontIncrease:hover {text-decoration:none;}
+
+div.itemNavigation {
+    background: none;
+    border-bottom: none;
+    border-top: none;
+    margin: 0 0 24px;
+    padding: 0;
+}
+
+div.itemIntroText {
+    color: inherit;
+    font-size: 1em;
+    font-weight: normal;
+    line-height:inherit;
+    padding:0;
+}
+#blog div.itemIntroText{margin:0 0 20px;}
+
+div.itemContentFooter {
+    border-top: none;
+    color: inherit;
+    display: block;
+    margin: 0px 0 21px;
+    padding: 0px;
+    text-align:left;
+	clear:both;
+}
+
+div.itemImageBlock {float:none; margin:0 0 30px; padding: 0;}
+#blog div.itemImageBlock{margin:0 20px 10px 0;float:left;}
+span.itemImage {display: block; margin: 0; text-align: left;}
+span.itemImage img {border:none;padding:0}
+div.itemBackToTop {text-align: right; display:none;}
+div.itemView {border-bottom: none;}
+div.itemBody {margin: 0; padding: 0;}
+
+/*Edit buttons*/
+
+span.catItemEditLink,
+span.itemEditLink,
+span.userItemEditLink{display: block;float: right;margin: 0;padding: 0 1em 0 0;text-align: right;width: auto;}
+
+span.catItemEditLink a,
+span.itemEditLink a,
+span.userItemEditLink a {background: none;border:none;font-family: inherit;font-size: 11px;font-weight: normal;padding: 0;text-decoration: none;	letter-spacing:normal;}
+
+span.catItemEditLink a:hover,
+span.itemEditLink a:hover,
+span.userItemEditLink a:hover {background: none;text-decoration: underline;}
+
+/*AddThis Social Buttons*/
+
+div.social-button{overflow: hidden;padding: 1em 0 50px;border-bottom:1px solid #404040;margin-bottom:46px;}
+div.social-button span.label{display: block;float: left;font-weight:normal;line-height: 16px;padding-right: 10px;color:#848484;font-size:14px;}
+div.social-button div.addthis_toolbox{overflow:hidden;}
+.at300bs:hover{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(opacity=80) !important;}
+
+/*---Rating---*/
+
+div.catItemRatingBlock,
+div.itemRatingBlock {padding: 0;}
+
+div.catItemRatingBlock span{color:inherit;}
+
+div.catItemRatingBlock span,
+div.itemRatingBlock span {
+    display: block;
+    float: left;
+    font-style: normal;
+    margin: 0;
+    padding: 0 12px 0 0;
+	color:#848484;font-size:14px;
+	line-height:15px;
+}
+
+.itemRatingList, .itemRatingList a:hover, .itemRatingList .itemCurrentRating {
+    background: url("../images/system/transparent_star.png") repeat-x scroll transparent;}
+
+.itemRatingList{background-position: left top;}
+.itemRatingList a:hover {background-position: left -13px;}
+.itemRatingList .itemCurrentRating{background-position: left -13px;}
+
+.component-content ul.itemRatingList {
+    background-position: left top;
+    float: left;
+    height: 13px;
+    list-style: none outside none;
+    margin:0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 80px;
+}
+
+.itemRatingLog {
+    float: left;
+    font-size: 11px;
+    line-height: 21px;
+    margin: 0;
+    padding: 0 0 0 4px;
+	display:none;
+}
+
+/*----------------Rockbox----------*/
+#sbox-overlay{width:100% !important;min-width:1020px !important;}
+#sbox-overlay, #rokbox-overlay{z-index:655500 !important;}
+#sbox-window, #rokbox-wrapper{z-index:655502 !important;}
+#sbox-window{left:50% !important;margin-left:-505px !important;}
+
+/*----------------Comments-------------*/
+
+div.itemCommentsForm p.itemCommentsFormNotes {border-top: none;}
+
+div.itemAuthorBlock {
+    background: none;
+    border: none;
+    margin: 0 0 16px;
+    padding: 0px;
+}
+
+div.itemComments {
+    background: none;
+    border: none;
+    padding: 0px;
+}
+
+div.itemAuthorBlock div.itemAuthorDetails {margin: 0; padding: 0;}
+
+div.itemComments ul.itemCommentsList{padding:0;margin:0 0 46px;border-bottom:1px solid #404040;}
+
+div.itemComments ul.itemCommentsList li span.commentDate {
+    border-right: none;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+div.itemComments ul.itemCommentsList li span.commentAuthorName,
+div.itemComments ul.itemCommentsList li span.commentDate{font-weight: normal; font-size:12px;color:#585458;}
+div.itemComments ul.itemCommentsList li span.commentAuthorName a{color:#585458;}
+div.itemComments ul.itemCommentsList li span.commentAuthorName{margin-right:13px;padding-right:9px;border-right:1px solid #39383a}
+
+div.itemComments ul.itemCommentsList li span.commentLink{float:right;margin:0;padding:10px 0 0;}
+
+
+div.itemComments ul.itemCommentsList li span.commentLink a,
+div.itemComments ul.itemCommentsList li span.commentLink a:hover,
+div.itemComments ul.itemCommentsList li span.commentToolbar a,
+div.itemComments ul.itemCommentsList li span.commentToolbar a:hover{font-size:12px;color:#fefefe;margin-left:10px;text-transform:uppercase;text-decoration:none;background:#21252b;padding:8px 13px 9px;display:inline-block;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
+div.itemComments ul.itemCommentsList li span.commentToolbar a,
+div.itemComments ul.itemCommentsList li span.commentToolbar a:hover{margin-left:0;margin-right:20px;}
+	
+div.itemComments ul.itemCommentsList li span.commentLink a:hover,
+div.itemComments ul.itemCommentsList li span.commentToolbar a:hover{background:#f3b414;
+	color:#000;}
+
+div.itemComments ul.itemCommentsList li img {
+    background: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    float: left;
+	margin:0 20px 0 0;
+}
+
+div.itemComments ul.itemCommentsList li p{padding:0;}
+div.itemComments ul.itemCommentsList li {border:none;background:none !important;padding:0;margin-bottom:50px;}
+
+div.itemCommentsForm form label.formName,
+div.itemCommentsForm form label.formEmail,
+div.itemCommentsForm form label.formUrl,
+div.itemCommentsForm form label.formComment{display: block;font-size:14px;color:#848484;}
+
+div.itemCommentsForm form input.inputbox{margin:0 0 10px;width:313px;}
+div.itemCommentsForm form textarea.inputbox{width:439px;height:166px}
+
+div.itemCommentsForm form input#submitCommentButton {margin:34px 0 0}
+
+
+/*Loading*/
+div.itemCommentsForm form {	position:relative;}
+
+div.itemCommentsForm form span#formLog {
+    bottom: 10px;
+    display: block;
+    right:15px;
+	padding:0;
+    line-height: 1.8em;
+    margin: 0;
+    position:absolute;
+	font-size:13px;
+    	}
+
+div.itemCommentsForm form .formLogLoading {
+    background:url(../images/ajax-loader.gif);
+    display: block;
+    width: 128px;
+    height: 15px;
+}
+
+
+	
+/*Report Comment*/
+
+div.k2ReportCommentFormContainer {
+    margin: 0;
+    padding: 8px;
+    width: 480px;
+}
+
+/*--------------------------------Frontend Editing----------------------------------*/
+
+div#k2Frontend table.adminFormK2 {
+    border-collapse: separate !important;
+}
+
+/*----------------------------------------Contact Form------------------------------*/
+
+.component-content form fieldset dt {
+    clear: left;
+    float: left;
+    padding: 0;
+    width: 145px;
+	margin-bottom:1em;
+}
+
+.component-content form fieldset dd {
+    float: left;
+    padding: 0;
+	margin-bottom:1em;
+}
+
+.component-content .contact .button { margin: 0;}
+
+input.invalid,
+textarea.invalid{
+	border:1px solid #F00 !important;
+	box-shadow:none;}
+	
+#jform_contact_email_copy{    
+	display: inline;
+    height: auto;
+    left: 0;
+    margin: 0;
+    position: relative;
+    top: 4px;
+    width: auto;}
+
+
+
+
+
+
+
+/*-----------------------------------------Create Account------------------------------*/
+
+div.k2AccountPage th.k2ProfileHeading {background: none; font-size: 2em; padding: 0 0 1em !important; text-align: left;}
+div.k2AccountPage table.admintable td.key, .k2AccountPage table.admintable td.paramlist_key {
+    background: none;
+    border-bottom: none;
+    border-right: none;
+    width: 100px;
+}
+.component-content th {border-bottom: none;}
+div.k2AccountPage div.k2AccountPageUpdate {border-top: none; margin: 0 0 0 315px; padding: 0px; text-align: left;}
+#josForm .componentheading{display:none;}
+#josForm .inputbox{margin: 0.5em 0;}
+div.k2AccountPage table tr td label {margin: 0 0.5em 0 0; white-space: nowrap;}
+#josForm textarea#description, #josForm input#image{margin: 0 0 0.5em 0;}
+
+div.k2AccountPage table.admintable input.inputbox{margin:0.5em 0;}
+
+div.k2AccountPage table.admintable textarea,
+div.k2AccountPage table.admintable input#image,
+div.k2AccountPage table.admintable input#url{margin: 0 0 0.5em 0}
+	
+	
+/*---------------------------------Reset & Remind--------------------------*/
+
+.component-content .reset,
+.component-content .remind{
+	padding: 2em 0;}
+	
+/*-----------------------------------Search Results------------------------------*/
+
+div.form-limit-and-counter{
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	padding:1em;
+	margin:1em 0;
+	overflow:hidden;}
+
+.component-content .form-limit,
+.component-content p.counter {
+	display:block;
+	padding:0;
+	margin:0;}
+	
+.component-content .form-limit{float:right;}
+.component-content p.counter{float:left;}
+
+.component-content dl.search-results dd.result-created,
+.component-content dl.search-results dd.result-category{
+	display:inline;
+	padding:0;}
+
+
+
+/*----------------------------------Sidebars------------------------------------------*/
+
+#rt-sidebar-a,
+#rt-sidebar-b,
+#rt-sidebar-c {
+    background: none;
+}
+
+	
+/*----------------------------------Modules------------------------------------------*/
+
+.rt-block {
+    margin-bottom: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+
+div.k2ItemsBlock ul li div.moduleItemIntrotext {
+    line-height:inherit;
+    padding: 0;
+}
+div.k2ItemsBlock ul li div.moduleItemIntrotext a.moduleItemImage{float:left;}
+div.k2ItemsBlock ul li a.moduleItemImage{float:left;margin:0 20px 0 0;}
+.trainers div.k2ItemsBlock ul li div.moduleItemIntrotext a.moduleItemImage{margin:0 0 15px;}
+div.k2ItemsBlock ul li div.moduleItemIntrotext a.moduleItemImage img {
+    border: none;
+    float:none;
+    padding: 0;
+    margin:0;
+}
+
+/*User Login*/
+
+#form-login #modlgn_remember{display: inline;height: auto;left: 1em;margin: 0;position: relative;top: 1px;width: auto;background:none;border:none;padding:0;}
+	
+div.k2UserBlockDetails a.k2Avatar{float:left; margin-right:1em;}
+div.k2UserBlock div.k2UserBlockDetails span.ubName {display: block;font-size: inherit; font-weight: bold;}
+div.k2UserBlock ul.k2UserBlockActions {margin:0 0 1em 0;}
+div.k2LoginBlock ul li a{line-height:inherit !important}
+
+
+/*Last Comments Module*/
+div.k2LatestCommentsBlock{padding:0 0 50px;}
+div.k2LatestCommentsBlock ul li {margin: 0 0 27px;}
+div.k2LatestCommentsBlock ul li a.k2Avatar{display: block; float: left;}
+div.k2LatestCommentsBlock ul li a.k2Avatar img {
+    background: none;
+    border: none;
+    margin: 0 1em 1em 0;
+    padding: 0px;
+}
+div.k2LatestCommentsBlock ul li span.lcUsername{color:#fff;text-transform:uppercase;font-size:12px;}
+div.k2LatestCommentsBlock ul li span.lcCommentDate{color:#d5c691;margin:0 0 10px;}
+div.k2LatestCommentsBlock ul li span.lcUsername,
+div.k2LatestCommentsBlock ul li span.lcCommentDate {display:block;}
+div.k2LatestCommentsBlock ul li span.lcComment {clear: both; display: block;}
+
+
+/*Social Media links*/
+
+.smilecredits{display:none;}
+
+/*Search*/
+
+div.mod_search  input#mod-search-searchword{
+margin-bottom:1em;}
+
+
+/*IE Warning*/
+
+#rt-iewarn .rt-container{background:none;}
+
+.extra-wrap{overflow:hidden;}
+
+.pagination-results{display:none;}
+
+legend{color:inherit;}
+
+.component-content .button2-left{margin-bottom:10px;}
+.component-content .button2-left a{background:none;border:none;display:inline-block;}
+
+.addthis_default_style .at300b, .addthis_default_style .at300bo, .addthis_default_style .at300m{padding:0 4px;}
+.body-overlayed{overflow:visible !important;}

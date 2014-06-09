@@ -1,0 +1,13 @@
+function createRandomData(count) {
+    var data = [ {Id: 1, Sismo: "juan", Anio: 1550, Mes: "Enero", Dia: 2, Hora: 18, Minuto: 20, Segundo: 35, Intensidadmaxima: "IX", Intensidadepicentral: "", Magnitudestimada: "", Fenomenosasociados: "", Resumendanos: "", Citarepresentativa: "", Bibliografia: "", Interpretacion: "", Citatextual: "", Actions: ""},
+           { Id: 2, Sismo: "Adrian", Anio: 1550, Mes: "Enero", Dia: 2, Hora: 18, Minuto: 20, Segundo: 35, Intensidadmaxima: "IX", Intensidadepicentral: "", Magnitudestimada: "", Fenomenosasociados: "", Resumendanos: "", Citarepresentativa: "", Bibliografia: "", Interpretacion: "", Citatextual: "", Actions: ""},
+           { Id: 3, Sismo: "Pepe", Anio: 1550, Mes: "Enero", Dia: 2, Hora: 18, Minuto: 20, Segundo: 35, Intensidadmaxima: "IX", Intensidadepicentral: "", Magnitudestimada: "", Fenomenosasociados: "", Resumendanos: "", Citarepresentativa: "", Bibliografia: "", Interpretacion: "", Citatextual: "", Actions: ""},
+           { Id: 4, Sismo: "Pepe", Anio: 1550, Mes: "Enero", Dia: 2, Hora: 18, Minuto: 20, Segundo: 35, Intensidadmaxima: "IX", Intensidadepicentral: "", Magnitudestimada: "", Fenomenosasociados: "", Resumendanos: "", Citarepresentativa: "", Bibliografia: "", Interpretacion: "", Citatextual: "", Actions: ""},
+           { Id: 5, Sismo: "Pepe", Anio: 1550, Mes: "Enero", Dia: 2, Hora: 18, Minuto: 20, Segundo: 35, Intensidadmaxima: "IX", Intensidadepicentral: "", Magnitudestimada: "", Fenomenosasociados: "", Resumendanos: "", Citarepresentativa: "", Bibliografia: "", Interpretacion: "", Citatextual: "", Actions: ""},
+           { Id: 6, Sismo: "Pepe", Anio: 1550, Mes: "Enero", Dia: 2, Hora: 18, Minuto: 20, Segundo: 35, Intensidadmaxima: "IX", Intensidadepicentral: "", Magnitudestimada: "", Fenomenosasociados: "", Resumendanos: "", Citarepresentativa: "", Bibliografia: "", Interpretacion: "", Citatextual: "", Actions: ""},
+           { Id: 7, Sismo: "Pepe", Anio: 1550, Mes: "Enero", Dia: 2, Hora: 18, Minuto: 20, Segundo: 35, Intensidadmaxima: "IX", Intensidadepicentral: "", Magnitudestimada: "", Fenomenosasociados: "", Resumendanos: "", Citarepresentativa: "", Bibliografia: "", Interpretacion: "", Citatextual: "", Actions: ""},
+           { Id: 8, Sismo: "JHose", Anio: 1550, Mes: "Enero", Dia: 2, Hora: 18, Minuto: 20, Segundo: 35, Intensidadmaxima: "IX", Intensidadepicentral: "", Magnitudestimada: "", Fenomenosasociados: "", Resumendanos: "", Citarepresentativa: "", Bibliografia: "", Interpretacion: "", Citatextual: "", Actions: ""}],
+
+        now = new Date();
+    return data;
+}
